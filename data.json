@@ -1,0 +1,35 @@
+{
+    "projects": [
+      {
+        "title": "MultiCool School - School of Multicultural Dialogue",
+        "description": "U saradnji sa udruženjem Svetionik i uz podršku Nacionalnog Demokratskog Instituta (NDI Serbia), sproveden je projekat pod nazivom \"MultiCool School – School of mult\". Ovaj projekat ima za cilj podsticanje međureligijskog dijaloga među mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi različitih verskih opredeljenja imaju priliku da se međusobno bolje upoznaju, saznaju više o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja međureligijske saradnje u različitim oblastima i temama u svojoj zajednici. Učesnici \"MultiCool School\" programa učestvuju u raznovrsnim aktivnostima, uključujući radionice, predavanja, javne događaje, filmske večeri, city tours, zajedničke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okruženju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.",
+        "thumbnail": "MultiCool.jpg",
+        "images": ["MultiCool.jpg", "MultiCool.jpg","MultiCool.jpg","MultiCool.jpg","MultiCool.jpg"]
+      },
+      {
+        "title": "Budi drug, ne budi grub",
+        "description": "In collaboration with the city of Novi Pazar, the Reakt association implements the project 'Budi drug, ne budi grub' to analyze the presence of peer violence among high school students in Novi Pazar.",
+        "thumbnail": "Vrsnjacko nasilje.jpg",
+        "images": ["MultiCool.jpg", "MultiCool.jpg","MultiCool.jpg","MultiCool.jpg","MultiCool.jpg"]
+      },
+      {
+        "title": "Javne površine po meri bezbednosti devojčica i žena",
+        "description": "In collaboration with the Monitor association and with the support of UN Women and the Embassy of the United Kingdom, the project 'Javne površine po meri bezbednosti devojčica i žena' aims to improve the safety of girls and women in public spaces in Novi Pazar.",
+        "thumbnail": "JavnePovrsine.jpg",
+        "images": ["MultiCool.jpg", "MultiCool.jpg","MultiCool.jpg","MultiCool.jpg","MultiCool.jpg"]
+      },
+      {
+        "title": "Istraživanje o položaju žena u Novom Pazaru",
+        "description": "In order to create a Local Action Plan for gender equality in Novi Pazar, the project conducts research to gather information on priority areas where women and girls in the city need assistance and support.",
+        "thumbnail": "JavnePovrsine.jpg",
+        "images": ["MultiCool.jpg", "MultiCool.jpg","MultiCool.jpg","MultiCool.jpg","MultiCool.jpg"]
+      },
+      {
+        "title": "Igra za život",
+        "description": "Within the framework of the 'Support for programs for the prevention of drug abuse and gambling addiction among key populations' call by the City of Novi Pazar, the project 'Igra za život' aims to strengthen the community's capacity to prevent gambling addiction among young people in Novi Pazar.",
+        "thumbnail": "Kocka.jpg",
+        "images": ["MultiCool.jpg", "MultiCool.jpg","MultiCool.jpg","MultiCool.jpg","MultiCool.jpg"]
+      }
+    ]
+  }
+  
