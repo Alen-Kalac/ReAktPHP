@@ -1,5 +1,3 @@
-<!-- project.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +10,17 @@
     <?php include "navbar.php"; ?>
 
     <?php
-    // Get project title from the URL parameter
-    $projectTitle = isset($_GET['title']) ? urldecode($_GET['title']) : '';
+    // Get project ID from the URL parameter
+    $projectId = isset($_GET['id']) ? $_GET['id'] : '';
 
     // Read projects from the local JSON file
     $projectsJson = file_get_contents('data.json');
     $projects = json_decode($projectsJson, true);
 
-    // Find the project with the matching title
+    // Find the project with the matching ID
     $project = null;
     foreach ($projects['projects'] as $proj) {
-        if ($proj['title'] == $projectTitle) {
+        if ($proj['id'] == $projectId) {
             $project = $proj;
             break;
         }
@@ -37,7 +35,7 @@
 
         <div class="photo-gallery">
             <?php
-            // Assuming $project["photos"] is an array of photo filenames
+            // Assuming $project["images"] is an array of photo filenames
             foreach ($project["images"] as $photo) {
                 echo '<img src="./assets/projectImg/' . $photo . '" alt="' . $project["title"] . '">';
             }

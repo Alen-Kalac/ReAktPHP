@@ -10,6 +10,24 @@
 
 html {
     font-size: 16px !important;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        /* Thin width of the scrollbar */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--mainColor);
+        /* Color of the scrollbar thumb */
+        border-radius: 10px;
+        /* Rounded corners */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        /* Color of the scrollbar track */
+
+    }
 }
 
 :root {
@@ -25,7 +43,7 @@ html {
 }
 
 nav {
-    background-color: #333;
+    background-color: var(--mainColor);
     height: 10vh;
     display: flex !important;
     justify-content: space-around;
@@ -235,47 +253,57 @@ nav {
     justify-content: space-between;
 
 
-    h2 {
-        width: 100%;
-
-        text-align: left;
-        font-size: 3rem;
-    }
-
     .content {
         display: flex;
-        padding: 3% 0;
+        justify-content: space-between;
 
         .text {
             width: 60%;
-            margin: 0 5%;
-            padding: 0 5%;
-            background-color: var(--mainColor);
-            color: var(--white);
             text-align: justify;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 2vh;
+            justify-content: space-between;
             gap: 50px;
-            font-size: 1.2rem;
-            line-height: 1.8rem;
-            font-weight: 500;
+
+            h2 {
+                width: 100%;
+                text-align: left;
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+                color: var(--mainColor);
+            }
+
+            p {
+                font-size: 1.3rem;
+                text-align: justify;
+                line-height: 2rem;
+                font-weight: 500;
+            }
+
+            li {
+                list-style: none;
+                font-size: 1.1rem;
+                margin-left: 1rem;
+                margin-bottom: 1rem;
+            }
+
 
             a {
+                margin: 0 auto;
+
                 text-decoration: none;
-                color: black;
-                font-size: 2rem;
+                color: var(--mainColor);
+                font-size: 3rem;
                 font-weight: bold;
                 padding: 10px;
                 text-decoration: underline;
                 text-decoration-color: transparent;
                 text-underline-offset: 0px;
+                text-decoration-skip-ink: none;
 
                 &:hover {
                     text-underline-offset: 15px;
-                    text-decoration-color: var(--white);
+                    text-decoration-color: var(--mainColor);
 
                     transition: 0.4s;
                 }
@@ -285,10 +313,12 @@ nav {
         .latest-blog {
             width: 30%;
             height: 100%;
+            background-color: white;
             border: 1px solid orange;
             border-radius: 10px;
             text-align: justify;
             overflow: hidden;
+            color: black;
 
             img {
                 width: 100%;
@@ -315,14 +345,24 @@ nav {
 
 
     .project-card {
+        border-radius: 10px;
+        overflow: hidden;
         text-align: center;
-        border: 1px solid #ddd;
+
         width: 100%;
         display: flex;
         flex-direction: column;
         height: 100%;
         color: black;
         text-decoration: none;
+        border: 2px solid var(--mainColor);
+
+        &:hover {
+            border: 2px solid var(--mainColor);
+
+            transform: scale(1.03);
+            transition: 0.5s;
+        }
 
 
 
@@ -335,7 +375,7 @@ nav {
 
 
         h3 {
-            
+
             height: 100%;
             font-size: 2.2vh;
             text-align: justify;
@@ -343,7 +383,7 @@ nav {
             text-align: center;
             align-items: center;
             justify-content: center;
-            padding: 5px;
+            padding: 10px;
         }
     }
 }
@@ -362,37 +402,70 @@ nav {
         text-align: center;
         margin: 0 5px;
         text-decoration: none;
+        background-color: white;
+        border: 1px solid var(--mainColor);
+        color: var(--mainColor);
         border-radius: 50%;
-        background-color: var(--mainColor);
-        color: var(--white);
+
 
         &.current {
-            background-color: var(--white);
-            border: 1px solid var(--mainColor);
-            color: var(--mainColor);
+            background-color: var(--mainColor);
+            color: var(--white);
+
         }
     }
 }
+
 .project-details {
+    padding: 3% 0%;
     text-align: center;
-    width: 80%;
+    width: 70%;
     margin: auto;
-  
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 20px;
+    text-align: justify;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
     }
-  
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+    }
+
+
+
     .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px; // Adjust the gap between photos as needed
-  
-      img {
+        display: flex;
+        height: 50vh;
         width: 100%;
-        height: auto;
-        border-radius: 8px; // Optional: Add rounded corners to images
-      }
+        overflow-x: auto;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+            /* Thin width of the scrollbar */
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--mainColor);
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+            /* Color of the scrollbar track */
+
+        }
+
+        img {
+            margin-right: 20px;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
     }
-  }
+}

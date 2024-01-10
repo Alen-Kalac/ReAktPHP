@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style.scss">
-    
+
 </head>
 
 <body>
-<?php
+    <?php
     include 'navbar.php'
         ?>
     <?php
@@ -37,7 +37,7 @@
         </div>
         <div class="goal">
             <img src="./assets/Blagostanje.svg" alt="" />
-            <p>Psihosocijalno blagostanje</p>
+            <p>Mentalno zdravlje</p>
         </div>
         <div class="goal">
             <img src="./assets/Edukacija.svg" alt="" />
@@ -76,32 +76,33 @@
         </div>
     </div>
     <div class="therapy">
-        PROMENITI DIZAJN, TRENUTNO NEMAM IDEJU
         <div class="content">
             <div class="text">
-                <h2>Psihilosko savetovanje</h2>
-                <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam debitis
-                delectus expedita sunt, unde dicta adipisci natus quidem quam fugiat
-                odio quasi excepturi enim iste sapiente? Quam, et consequuntur facilis
-                optio non voluptatum reprehenderit quae ea architecto harum officiis
-                voluptates temporibus rerum corrupti, hic itaque, id voluptate labore
-                dolores sit.
-                </p>
+                <div class="options">
+                    <h2>Psihološko savetovanje</h2>
+                    <p>
+                        U okviru rada udruženja Reakt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
+                        mladih i odraslih kroz pružanje sledećih usluga :
+                    </p>
+                    <li>Psihodijagnostika</li>
+                    <li>Individualne i grupne savetodavno-terapijske usluge za decu, mlade i odrasle</li>
+                    <li>Psihoedukacija</li>
+                    <li>Karijerno savetovanje</li>
+                </div>
                 <a href="/therapy">Sve usluge</a>
             </div>
             <div class="latest-blog">
                 <img src="./assets/Projects.jpg" alt="" />
                 <div class="blog-text">
-                <h3>Naslov poslednjeg blog posta</h3>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sequi
-                    doloribus fugiat iste eligendi illo, non quasi totam minima, nihil
-                    distinctio consequatur deserunt odio! Assumenda eligendi expedita
-                    nihil impedit saepe commodi unde maxime. Accusantium officiis hic
-                    neque est modi distinctio quasi aut cupiditate dolor sunt
-                    blanditiis, sit rem optio sed!
-                </p>
+                    <h3>Naslov poslednjeg blog posta</h3>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sequi
+                        doloribus fugiat iste eligendi illo, non quasi totam minima, nihil
+                        distinctio consequatur deserunt odio! Assumenda eligendi expedita
+                        nihil impedit saepe commodi unde maxime. Accusantium officiis hic
+                        neque est modi distinctio quasi aut cupiditate dolor sunt
+                        blanditiis, sit rem optio sed!
+                    </p>
                 </div>
             </div>
         </div>
