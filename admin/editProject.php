@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -46,8 +48,8 @@
             foreach ($projects['projects'] as &$project) {
                 if ($project['id'] == $projectIdToEdit) {
                     $project['title'] = $_POST['title'];
-                    $project['description'] = $_POST['description'];
-
+                    $project['description'] = $_POST['new_description_content']; // Use the hidden field for description
+    
                     if (!empty($_FILES['newThumbnail']['name'])) {
                         $newThumbnailName = $_FILES['newThumbnail']['name'];
                         $newThumbnailTmp = $_FILES['newThumbnail']['tmp_name'];
@@ -133,14 +135,20 @@
 
     // Display the project editing form
     ?>
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="" enctype="multipart/form-data" onsubmit="updateDescription()">
         <input type="hidden" name="project_id" value="<?php echo $projectToEdit['id']; ?>">
 
         <label for="title">Title:</label>
         <input type="text" name="title" value="<?php echo $projectToEdit['title']; ?>" required><br>
 
         <label for="description">Description:</label>
-        <textarea name="description" required><?php echo $projectToEdit['description']; ?></textarea><br>
+        <div data-underline="no" data-remove-format="no" data-indent="no" data-outdent="no"
+            data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
+            data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
+            <?php echo $projectToEdit['description']; ?>
+        </div><br>
+        <input type="hidden" name="new_description_content" id="new_description_content">
+
 
         <label for="thumbnail">Current Thumbnail:</label>
         <img src="../assets/projectImg/<?php echo $projectToEdit['thumbnail']; ?>" alt="Thumbnail"
@@ -165,6 +173,15 @@
         <button type="submit" name="save">Save</button>
         <button type="submit" name="deleteProject">Delete Project</button>
     </form>
+    <script src="https://unpkg.com/tiny-editor/dist/bundle.js"></script>
+
+    <script>
+        // Function to update the hidden input with the innerHTML of the div
+        function updateDescription() {
+            var editorContent = document.getElementById('myEditor').innerHTML;
+            document.getElementById('new_description_content').value = editorContent;
+        }
+    </script>
 
 </body>
 

@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "MultiCool School - School of Multicultural Dialogue",
-            "description": "U saradnji sa udru\u017eenjem Svetionik i uz podr\u0161ku Nacionalnog Demokratskog Instituta (NDI Serbia), sproveden je projekat pod nazivom \"MultiCool School \u2013 School of mult\". Ovaj projekat ima za cilj podsticanje me\u0111ureligijskog dijaloga me\u0111u mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi razli\u010ditih verskih opredeljenja imaju priliku da se me\u0111usobno bolje upoznaju, saznaju vi\u0161e o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja me\u0111ureligijske saradnje u razli\u010ditim oblastima i temama u svojoj zajednici. U\u010desnici \"MultiCool School\" programa u\u010destvuju u raznovrsnim aktivnostima, uklju\u010duju\u0107i radionice, predavanja, javne doga\u0111aje, filmske ve\u010deri, city tours, zajedni\u010dke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okru\u017eenju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.",
+            "description": "U saradnji sa udru\u017eenjem Svetionik i uz podr\u0161ku <b>Nacionalnog Demokratskog Instituta (NDI Serbia)<\/b>, sproveden je projekat pod nazivom \"MultiCool School \u2013 School of mult\". Ovaj projekat ima za cilj podsticanje me\u0111ureligijskog dijaloga me\u0111u mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi razli\u010ditih verskih opredeljenja imaju priliku da se me\u0111usobno bolje upoznaju, saznaju vi\u0161e o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja me\u0111ureligijske saradnje<b> u razli\u010ditim oblastima i temama<\/b> u svojoj zajednici. U\u010desnici \"MultiCool School\" programa u\u010destvuju u raznovrsnim aktivnostima, uklju\u010duju\u0107i radionice, predavanja, javne doga\u0111aje, filmske ve\u010deri, city tours, zajedni\u010dke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okru\u017eenju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.",
             "thumbnail": "BG.png",
             "images": [
                 "Background five.png",
@@ -25,70 +25,26 @@
                 "Background six.png",
                 "Background three.png"
             ]
+        }
+    ],
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Dobro jutro !",
+            "description": "\r\n            U saradnji sa udru\u017eenjem Svetionik i uz podr\u0161ku <b>Nacionalnog Demokratskog Instituta (NDI Serbia<\/b>), sproveden je projekat pod nazivom \"MultiCool School \u2013 School of mult\". Ovaj projekat ima za cilj podsticanje me\u0111ureligijskog dijaloga me\u0111u mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi razli\u010ditih verskih opredeljenja imaju priliku da se me\u0111usobno bolje upoznaju, saznaju vi\u0161e o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja me\u0111ureligijske saradnje u razli\u010ditim oblastima i temama u svojoj zajednici. U\u010desnici \"MultiCool School\" programa u\u010destvuju u raznovrsnim aktivnostima, uklju\u010duju\u0107i radionice, predavanja, javne doga\u0111aje, filmske ve\u010deri, city tours, zajedni\u010dke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okru\u017eenju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.        ",
+            "thumbnail": "FwBlCc7XwAYBt5M.jfif"
+        },
+        {
+            "id": 2,
+            "title": "Dobro jutro !",
+            "description": "U saradnji sa udru\u017eenjem Svetionik i uz podr\u0161ku Nacionalnog Demokratskog Instituta (NDI Serbia), sproveden je projekat pod nazivom \"MultiCool School \u2013 School of mult\". Ovaj projekat ima za cilj podsticanje me\u0111ureligijskog dijaloga me\u0111u mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi razli\u010ditih verskih opredeljenja imaju priliku da se me\u0111usobno bolje upoznaju, saznaju vi\u0161e o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja me\u0111ureligijske saradnje u razli\u010ditim oblastima i temama u svojoj zajednici. U\u010desnici \"MultiCool School\" programa u\u010destvuju u raznovrsnim aktivnostima, uklju\u010duju\u0107i radionice, predavanja, javne doga\u0111aje, filmske ve\u010deri, city tours, zajedni\u010dke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okru\u017eenju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.",
+            "thumbnail": "FwBlCc7XwAYBt5M.jfif"
         },
         {
             "id": 3,
-            "title": "Javne povr\u0161ine po meri bezbednosti devoj\u010dica i \u017eena",
-            "description": "In collaboration with the Monitor association and with the support of UN Women and the Embassy of the United Kingdom, the project 'Javne povr\u0161ine po meri bezbednosti devoj\u010dica i \u017eena' aims to improve the safety of girls and women in public spaces in Novi Pazar.",
-            "thumbnail": "FwBlCc7XwAYBt5M.jfif",
-            "images": [
-                "Background five.png",
-                "Background four.png",
-                "Background one.png",
-                "Background six.png",
-                "Background three.png"
-            ]
-        },
-        {
-            "id": 4,
-            "title": "Istra\u017eivanje o polo\u017eaju \u017eena u Novom Pazaru",
-            "description": "In order to create a Local Action Plan for gender equality in Novi Pazar, the project conducts research to gather information on priority areas where women and girls in the city need assistance and support.",
-            "thumbnail": "Background five.png",
-            "images": [
-                "Background five.png",
-                "Background four.png",
-                "Background one.png",
-                "Background six.png",
-                "Background three.png"
-            ]
-        },
-        {
-            "id": 5,
-            "title": "Igra za \u017eivot",
-            "description": "Within the framework of the 'Support for programs for the prevention of drug abuse and gambling addiction among key populations' call by the City of Novi Pazar, the project 'Igra za \u017eivot' aims to strengthen the community's capacity to prevent gambling addiction among young people in Novi Pazar.",
-            "thumbnail": "Background five.png",
-            "images": [
-                "Background five.png",
-                "Background four.png",
-                "Background one.png",
-                "Background six.png",
-                "Background three.png"
-            ]
-        },
-        {
-            "id": 6,
-            "title": "Alen",
-            "description": "Alen",
-            "thumbnail": "Background five.png",
-            "images": [
-                "Background one.png",
-                "Background three.png",
-                "Background two.png",
-                "BG.png"
-            ]
-        },
-        {
-            "id": 7,
-            "title": "Test2",
-            "description": "Test2",
-            "thumbnail": "PG Love 2.png",
-            "images": [
-                "Background five.png",
-                "Background four.png",
-                "Background one.png",
-                "Background six.png",
-                "Background three.png"
-            ]
+            "title": "Dobro jutro !",
+            "description": "U saradnji sa udru\u017eenjem Svetionik i uz podr\u0161ku Nacionalnog Demokratskog Instituta (NDI Serbia), sproveden je projekat pod nazivom \"MultiCool School \u2013 School of mult\". Ovaj projekat ima za cilj podsticanje me\u0111ureligijskog dijaloga me\u0111u mladima u Novom Pazaru i okolini. Unutar programa \"MultiCool School\", mladi razli\u010ditih verskih opredeljenja imaju priliku da se me\u0111usobno bolje upoznaju, saznaju vi\u0161e o svojoj i drugim religijama, i aktiviraju se u oblasti podsticanja me\u0111ureligijske saradnje u razli\u010ditim oblastima i temama u svojoj zajednici. U\u010desnici \"MultiCool School\" programa u\u010destvuju u raznovrsnim aktivnostima, uklju\u010duju\u0107i radionice, predavanja, javne doga\u0111aje, filmske ve\u010deri, city tours, zajedni\u010dke akcije i studijska putovanja. Sve ove aktivnosti imaju za cilj postizanje grupne kohezije u raznolikom okru\u017eenju, razbijanje predrasuda te upoznavanje i prihvatanje verske raznolikosti.",
+            "thumbnail": "FwBlCc7XwAYBt5M.jfif"
         }
     ]
 }
