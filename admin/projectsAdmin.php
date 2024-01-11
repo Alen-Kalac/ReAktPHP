@@ -11,6 +11,8 @@
 
 <body>
 
+
+
     <?php
     // Read projects from the local JSON file
     $projectsJson = file_get_contents('../data.json');
