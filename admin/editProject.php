@@ -19,7 +19,7 @@
     // Function to delete an image from the project and from the directory
     function deleteImage($projectId, $imageName)
     {
-        $imagePath = "../assets/projectImg/$imageName";
+        $imagePath = "../assets/ProjectsImages/$imageName";
         if (file_exists($imagePath)) {
             unlink($imagePath); // Delete the image file
         }
@@ -50,11 +50,20 @@
                     $project['title'] = $_POST['title'];
                     $project['description'] = $_POST['new_description_content']; // Use the hidden field for description
     
+                    // Update thumbnail
                     if (!empty($_FILES['newThumbnail']['name'])) {
                         $newThumbnailName = $_FILES['newThumbnail']['name'];
                         $newThumbnailTmp = $_FILES['newThumbnail']['tmp_name'];
-                        move_uploaded_file($newThumbnailTmp, "../assets/projectImg/$newThumbnailName");
-                        $project['thumbnail'] = $newThumbnailName;
+
+                        // Create a folder for each project using its ID
+                        $projectFolder = "../assets/ProjectsImages/project{$projectIdToEdit}";
+                        if (!file_exists($projectFolder)) {
+                            mkdir($projectFolder);
+                        }
+
+                        $newThumbnailPath = "$projectFolder/$newThumbnailName";
+                        move_uploaded_file($newThumbnailTmp, $newThumbnailPath);
+                        $project['thumbnail'] = "project{$projectIdToEdit}/$newThumbnailName";
                     }
 
                     // Update images array
@@ -62,9 +71,16 @@
                         $newImages = array();
                         foreach ($_FILES['images']['name'] as $index => $imageName) {
                             $newImageTmp = $_FILES['images']['tmp_name'][$index];
-                            $newImagePath = "../assets/projectImg/$imageName";
+
+                            // Create a folder for each project using its ID
+                            $projectFolder = "../assets/ProjectsImages/project{$projectIdToEdit}";
+                            if (!file_exists($projectFolder)) {
+                                mkdir($projectFolder);
+                            }
+
+                            $newImagePath = "$projectFolder/$imageName";
                             move_uploaded_file($newImageTmp, $newImagePath);
-                            $newImages[] = $imageName;
+                            $newImages[] = "project{$projectIdToEdit}/$imageName";
                         }
                         $project['images'] = array_merge($project['images'], $newImages);
                         $project['images'] = array_values(array_unique($project['images'])); // Remove duplicates and reindex
@@ -142,8 +158,8 @@
         <input type="text" name="title" value="<?php echo $projectToEdit['title']; ?>" required><br>
 
         <label for="description">Description:</label>
-        <div data-underline="no" data-remove-format="no" data-indent="no" data-outdent="no"
-            data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
+        <div data-underline="no"  data-indent="no" data-outdent="no"
+             data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
             data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
             <?php echo $projectToEdit['description']; ?>
         </div><br>
@@ -151,7 +167,7 @@
 
 
         <label for="thumbnail">Current Thumbnail:</label>
-        <img src="../assets/projectImg/<?php echo $projectToEdit['thumbnail']; ?>" alt="Thumbnail"
+        <img src="../assets/ProjectsImages/<?php echo $projectToEdit['thumbnail']; ?>" alt="Thumbnail"
             style="max-width: 200px;"><br>
         <label for="newThumbnail">Change Thumbnail:</label>
         <input type="file" name="newThumbnail"><br>
@@ -161,7 +177,7 @@
             <?php
             foreach ($projectToEdit['images'] as $image) {
                 echo '<div style="margin-right: 10px; margin-bottom: 10px;">';
-                echo '<img src="../assets/projectImg/' . $image . '" alt="' . $projectToEdit['title'] . '" style="max-width: 100px; max-height: 100px;">';
+                echo '<img src="../assets/ProjectsImages/' . $image . '" alt="' . $projectToEdit['title'] . '" style="max-width: 100px; max-height: 100px;">';
                 echo '<br>';
                 echo '<button type="submit" name="deleteImage" value="' . $image . '">Delete</button>';
                 echo '</div>';

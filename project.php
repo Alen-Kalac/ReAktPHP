@@ -37,7 +37,7 @@
             <?php
             // Assuming $project["images"] is an array of photo filenames
             foreach ($project["images"] as $photo) {
-                echo '<img src="./assets/projectImg/' . $photo . '" alt="' . $project["title"] . '">';
+                echo '<img src="./assets/ProjectsImages/' . $photo . '" alt="' . $project["title"] . '">';
             }
             ?>
         </div>

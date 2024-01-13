@@ -44,7 +44,7 @@
     // Function to delete the thumbnail of a blog post
     function deleteThumbnail($blogId, $thumbnailName)
     {
-        $thumbnailPath = "../assets/BlogImages/$thumbnailName";
+        $thumbnailPath = "../assets/BlogImages/blog{$blogId}/$thumbnailName";
         if (file_exists($thumbnailPath)) {
             unlink($thumbnailPath); // Delete the thumbnail file
         }
@@ -82,8 +82,15 @@
                         // Upload the new thumbnail
                         $newThumbnailName = $_FILES['newThumbnail']['name'];
                         $newThumbnailTmp = $_FILES['newThumbnail']['tmp_name'];
-                        move_uploaded_file($newThumbnailTmp, "../assets/BlogImages/$newThumbnailName");
-                        $blog['thumbnail'] = $newThumbnailName;
+
+                        // Create the new folder for the blog using its ID
+                        $blogFolder = "../assets/BlogImages/blog{$blogIdToEdit}";
+                        if (!file_exists($blogFolder)) {
+                            mkdir($blogFolder);
+                        }
+
+                        move_uploaded_file($newThumbnailTmp, "$blogFolder/$newThumbnailName");
+                        $blog['thumbnail'] = "blog{$blogIdToEdit}/$newThumbnailName";
                     }
 
                     // Save the updated blogs to the JSON file
@@ -142,7 +149,7 @@
         <input type="text" name="title" value="<?php echo $blogToEdit['title']; ?>" required><br>
 
         <label for="description">Description:</label>
-        <div data-underline="no" data-remove-format="no" data-indent="no" data-outdent="no"
+        <div data-underline="no"  data-indent="no" data-outdent="no"
             data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
             data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
             <?php echo $blogToEdit['description']; ?>

@@ -21,7 +21,7 @@
 
         foreach ($pagedProjects as $project) {
             echo '<a class="project-card" href="project.php?id=' . $project["id"] . '">';
-            echo '<img src="./assets/projectImg/' . $project["thumbnail"] . '" alt="' . $project["title"] . '">';
+            echo '<img src="./assets/ProjectsImages/' . $project["thumbnail"] . '" alt="' . $project["title"] . '">';
             echo '<h3>' . $project["title"] . '</h3>';
             echo '</a>';
         }

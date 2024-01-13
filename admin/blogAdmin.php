@@ -18,7 +18,7 @@
             <input type="text" name="newBlogTitle" required><br>
 
             <label for="newBlogDesc">Description:</label>
-            <div data-underline="no" data-remove-format="no" data-indent="no" data-outdent="no"
+            <div data-underline="no"  data-indent="no" data-outdent="no"
                 data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
                 data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
             </div><br>
@@ -53,19 +53,25 @@
             $newThumbnailName = $_FILES['newThumbnail']['name'];
             $newThumbnailTmp = $_FILES['newThumbnail']['tmp_name'];
 
-            // Move the uploaded thumbnail to the destination folder
-            move_uploaded_file($newThumbnailTmp, "../assets/BlogImages/$newThumbnailName");
-
             // Generate a new ID by looking up the ID of the last blog post and incrementing it
             $lastBlog = end($blogs['blogs']);
             $newBlogId = ($lastBlog) ? intval($lastBlog['id']) + 1 : 1;
+
+            // Create the new folder for the blog using its ID
+            $blogFolder = "../assets/BlogImages/blog{$newBlogId}";
+            if (!file_exists($blogFolder)) {
+                mkdir($blogFolder);
+            }
+
+            // Move the uploaded thumbnail to the destination folder
+            move_uploaded_file($newThumbnailTmp, "$blogFolder/$newThumbnailName");
 
             // Create the new blog post
             $newBlog = array(
                 'id' => $newBlogId,
                 'title' => $newBlogTitle,
                 'description' => $newBlogDesc,
-                'thumbnail' => $newThumbnailName,
+                'thumbnail' => "blog{$newBlogId}/$newThumbnailName",
             );
 
             // Add the new blog post to the array

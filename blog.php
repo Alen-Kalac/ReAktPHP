@@ -7,22 +7,12 @@
     <title>Blog</title>
     <link rel="stylesheet" href="./styles/style.scss">
     <style>
-        .blog-post {
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-
-        .thumbnail {
-            max-width: 100px;
-            max-height: 100px;
-        }
+       
 
         .pagination {
-            margin-top: 20px;
-            display: flex;
+            
             list-style: none;
-            gap: 10px;
+            
         }
     </style>
 </head>

@@ -35,21 +35,26 @@
                 'images' => array(), // Add logic for handling images
             );
 
+            $projectFolder = "../assets/ProjectsImages/project{$newProject['id']}";
+            mkdir($projectFolder);
+
             // Handle file upload for thumbnail
             if (!empty($_FILES['new_thumbnail']['name'])) {
                 $thumbnailName = $_FILES['new_thumbnail']['name'];
                 $thumbnailTmp = $_FILES['new_thumbnail']['tmp_name'];
-                move_uploaded_file($thumbnailTmp, "../assets/projectImg/$thumbnailName");
-                $newProject['thumbnail'] = $thumbnailName;
+                move_uploaded_file($thumbnailTmp, "$projectFolder/$thumbnailName");
+                $newProject['thumbnail'] = "project{$newProject['id']}/$thumbnailName";
+
             }
 
             // Handle file upload for images
             if (!empty($_FILES['new_images']['name'][0])) {
                 foreach ($_FILES['new_images']['name'] as $index => $imageName) {
                     $imageTmp = $_FILES['new_images']['tmp_name'][$index];
-                    $imagePath = "../assets/projectImg/$imageName";
+                    $imagePath = "$projectFolder/$imageName";
                     move_uploaded_file($imageTmp, $imagePath);
-                    $newProject['images'][] = $imageName;
+                    $newProject['images'][] = "project{$newProject['id']}/$imageName";
+
                 }
             }
 
@@ -73,7 +78,7 @@
     echo '<label for="new_title">Title:</label>';
     echo '<input type="text" name="new_title" required><br>';
     echo '<label for="new_description">Description:</label>';
-    echo '<div data-underline="no" data-remove-format="no" data-indent="no" data-outdent="no"
+    echo '<div data-underline="no"  data-indent="no" data-outdent="no"
     data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
     data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
 </div>';
@@ -92,7 +97,7 @@
         echo '<div>';
         echo '<h2>' . $project['title'] . '</h2>';
         echo '<p>' . $project['description'] . '</p>';
-        echo '<img src="../assets/projectImg/' . $project['thumbnail'] . '" alt="' . $project['title'] . '" style="max-width: 200px;">';
+        echo '<img src="../assets/ProjectsImages/' . $project['thumbnail'] . '" alt="' . $project['title'] . '" style="max-width: 200px;">';
         echo '<form method="post" action="">';
         echo '<input type="hidden" name="project_id" value="' . $project['id'] . '">';
         echo '<button type="submit" name="edit">Edit</button>';
