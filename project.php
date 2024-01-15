@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details</title>
     <link rel="stylesheet" href="./styles/style.scss"> <!-- Add your stylesheet link here -->
-</head>
-<body>
-    <?php include "navbar.php"; ?>
+    <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
 
     <?php
     // Get project ID from the URL parameter
@@ -26,9 +23,15 @@
         }
     }
 
-    // Check if the project was found
-    if ($project) {
+    // Set the title based on the project
+    $pageTitle = $project ? htmlspecialchars($project["title"]) : 'Project not found';
+    echo '<title>' . $pageTitle . '</title>';
     ?>
+</head>
+<body>
+    <?php include "navbar.php"; ?>
+
+    <?php if ($project): ?>
     <div class="project-details">
         <h1><?php echo $project["title"]; ?></h1>
         <p><?php echo $project["description"]; ?></p>
@@ -42,10 +45,10 @@
             ?>
         </div>
     </div>
-    <?php
-    } else {
-        echo '<p>Project not found</p>';
-    }
-    ?>
+    <?php else: ?>
+        <p>Project not found</p>
+    <?php endif; ?>
+    <?php include 'footer.php' ?>
+
 </body>
 </html>

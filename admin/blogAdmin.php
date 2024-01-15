@@ -86,7 +86,6 @@
     foreach ($blogs['blogs'] as $blog) {
         echo '<div>';
         echo '<h2>' . $blog['title'] . '</h2>';
-        echo '<p>' . $blog['description'] . '</p>';
         echo '<img src="../assets/BlogImages/' . $blog['thumbnail'] . '" alt="' . $blog['title'] . '" style="max-width: 200px;">';
         echo '<form method="post" action="">';
         echo '<input type="hidden" name="blog_id" value="' . $blog['id'] . '">';

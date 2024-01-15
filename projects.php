@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projekti - ReAKT</title>
+    <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="./styles/style.scss"> <!-- Add your stylesheet link here -->
 </head>
 <body>
@@ -39,5 +40,7 @@
     }
     ?>
     </div>
+    <?php include 'footer.php' ?>
+
 </body>
 </html>

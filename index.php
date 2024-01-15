@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
+    <title>Početna - ReAKT</title>
     <link rel="stylesheet" href="./styles/style.scss">
 
 </head>
+<style>
+    
+    </style>
 
 <body>
     <?php
@@ -71,44 +75,50 @@
             </div>
 
             <div class="cta">
-                <a href="/projects">Pogledaj sve projekte</a>
+                <a href="projects">Pogledaj sve projekte</a>
             </div>
         </div>
     </div>
     <div class="therapy">
+        <h2>Psihološko savetovanje</h2>
         <div class="content">
-            <div class="text">
-                <div class="options">
-                    <h2>Psihološko savetovanje</h2>
-                    <p>
-                        U okviru rada udruženja Reakt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
-                        mladih i odraslih kroz pružanje sledećih usluga :
-                    </p>
-                    <li>Psihodijagnostika</li>
-                    <li>Individualne i grupne savetodavno-terapijske usluge za decu, mlade i odrasle</li>
-                    <li>Psihoedukacija</li>
-                    <li>Karijerno savetovanje</li>
-                </div>
-                <a href="/therapy">Sve usluge</a>
+            <div class="options">
+                <p>
+                    U okviru rada udruženja Reakt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
+                    mladih i odraslih kroz pružanje sledećih usluga :
+
+                    <span>Psihodijagnostika</span>
+                    <span>Individualne i grupne savetodavno-terapijske usluge za decu, mlade i odrasle</span>
+                    <span>Psihoedukacija</span>
+                    <span>Karijerno savetovanje</span>
+
+                </p>
+
+                <a href="contact.php">Zakazi savetovanje</a>
             </div>
-            <div class="latest-blog">
-                <img src="./assets/Projects.jpg" alt="" />
-                <div class="blog-text">
-                    <h3>Naslov poslednjeg blog posta</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sequi
-                        doloribus fugiat iste eligendi illo, non quasi totam minima, nihil
-                        distinctio consequatur deserunt odio! Assumenda eligendi expedita
-                        nihil impedit saepe commodi unde maxime. Accusantium officiis hic
-                        neque est modi distinctio quasi aut cupiditate dolor sunt
-                        blanditiis, sit rem optio sed!
-                    </p>
-                </div>
-            </div>
+            <img src="./assets/Therapy.svg" alt="">
         </div>
 
     </div>
+    <div class="partners" id="partnersContainer">
+        <h3>
+            Naši partner
+        </h3>
+        <div class="partner-grid">
+        <?php
+        $folderPath = './assets/PartnersLogo/';
+        $files = scandir($folderPath);
 
+        foreach ($files as $file) {
+            if ($file != "." && $file != "..") {
+                echo '<img src="' . $folderPath . $file . '" class="partner-img">';
+            }
+        }
+        ?>
+        </div>
+    </div>
+<?php include 'footer.php' ?>
+   
 </body>
 
 </html>

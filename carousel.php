@@ -9,57 +9,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style scoped>
+
+</style>
 
 <body>
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="slide">
-                    <div class="img-container">
-                        <img src="./assets/Projects.jpg" alt="Slide" />
-                    </div>
-                    <div class="text">
-                        <h2>Projekat1</h2>
-                        <a href="">Vise informacija</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+            // Read the content of the data.json file
+            $jsonData = file_get_contents('data.json');
 
-            <div class="item ">
-                <div class="slide">
-                    <div class="img-container">
-                        <img src="./assets/Projects.jpg" alt="Slide" />
-                    </div>
-                    <div class="text">
-                        <h2>Projekat1</h2>
-                        <a href="">Vise informacija</a>
-                    </div>
-                </div>
-            </div>
+            // Decode the JSON data
+            $data = json_decode($jsonData, true);
 
-            <div class="item ">
-                <div class="slide">
-                    <div class="img-container">
-                        <img src="./assets/Projects.jpg" alt="Slide" />
-                    </div>
-                    <div class="text">
-                        <h2>Projekat1</h2>
-                        <a href="">Vise informacija</a>
-                    </div>
-                </div>
-            </div>
+            // Get the last 5 projects
+            $lastProjects = array_slice($data['projects'], -5);
 
-            <div class="item ">
-                <div class="slide">
-                    <div class="img-container">
-                        <img src="./assets/Projects.jpg" alt="Slide" />
-                    </div>
-                    <div class="text">
-                        <h2>Projekat1</h2>
-                        <a href="">Vise informacija</a>
+            // Loop through the projects and generate HTML
+            foreach ($lastProjects as $index => $project) {
+                $activeClass = ($index === 0) ? 'active' : ''; // Add 'active' class for the first iteration
+            
+                ?>
+                <div class="item <?= $activeClass ?>">
+                    <div class="slide">
+                        <div class="img-container">
+                            <img src="./assets/ProjectsImages/<?= $project['thumbnail'] ?>" alt="Slide" />
+                        </div>
+                        <div class="text">
+                            <h2>
+                                <?= $project['title'] ?>
+                            </h2>
+                            <a href="project.php?id=<?= $project['id'] ?>">Pogledaj detalje projekta</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
     </div>
@@ -67,8 +54,7 @@
     <script>
         $(document).ready(function () {
             // Activate Carousel
-            $("#myCarousel").carousel({ interval: 3000, pause: false });
-
+            $("#myCarousel").carousel({ interval: 4000, pause: false });
         });
     </script>
 
