@@ -10,7 +10,8 @@
 <body>
     <?php include "navbar.php"; ?>
     
-    <div class="latest-projects">
+    <div class="grid-container">
+    <div class="grid">
         <?php
         $projectsJson = file_get_contents('data.json');
         $projects = json_decode($projectsJson, true);
@@ -18,15 +19,16 @@
         $itemsPerPage = 6;
         $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
         $offset = ($currentPage - 1) * $itemsPerPage;
-        $pagedProjects = array_slice($projects['projects'], $offset, $itemsPerPage);
+        $pagedProjects = array_slice(array_reverse($projects['projects']), $offset, $itemsPerPage);
 
         foreach ($pagedProjects as $project) {
-            echo '<a class="project-card" href="project.php?id=' . $project["id"] . '">';
+            echo '<a class="grid-card" href="project.php?id=' . $project["id"] . '">';
             echo '<img src="./assets/ProjectsImages/' . $project["thumbnail"] . '" alt="' . $project["title"] . '">';
             echo '<h3>' . $project["title"] . '</h3>';
             echo '</a>';
         }
         ?>
+    </div>
     </div>
 
     <div class="pagination">

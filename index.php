@@ -10,16 +10,18 @@
 
 </head>
 <style>
-    
-    </style>
+
+</style>
 
 <body>
     <?php
     include 'navbar.php'
         ?>
-    <?php
-    include 'carousel.php'
-        ?>
+    <div class="promo-carousel">
+        <?php
+        include 'carousel.php'
+            ?>
+    </div>
     <div class="mission">
         <div class="mission-container">
             <img src="./assets/Misija.svg" alt="" />
@@ -75,9 +77,32 @@
             </div>
 
             <div class="cta">
-                <a href="projects">Pogledaj sve projekte</a>
+                <a href="projects.php">Pogledaj sve projekte</a>
             </div>
         </div>
+    </div>
+    <div class="projects-grid">
+        <?php
+        // Read data from data.json
+        $jsonData = file_get_contents('data.json');
+        $data = json_decode($jsonData, true);
+
+        // Get the last 3 projects
+        $projects = array_slice($data['projects'], -3);
+
+        // Generate HTML for each project
+        foreach ($projects as $project) {
+            $projectId = $project['id'];
+            $projectTitle = $project['title'];
+            $projectThumbnail = $project['thumbnail'];
+
+            // Output HTML for each project
+            echo '<a href="project.php?id=' . $projectId . '" class="project-card">';
+            echo '<img src="./assets/ProjectsImages/' . $projectThumbnail . '" alt="' . $projectTitle . '">';
+            echo '<h4>' . $projectTitle . '</h4>';
+            echo '</a>';
+        }
+        ?>
     </div>
     <div class="therapy">
         <h2>Psihološko savetovanje</h2>
@@ -100,25 +125,75 @@
         </div>
 
     </div>
-    <div class="partners" id="partnersContainer">
-        <h3>
-            Naši partner
-        </h3>
-        <div class="partner-grid">
-        <?php
-        $folderPath = './assets/PartnersLogo/';
-        $files = scandir($folderPath);
+    <div class="projects-grid">
+    <?php
+    // Read data from data.json
+    $jsonData = file_get_contents('data.json');
+    $data = json_decode($jsonData, true);
 
-        foreach ($files as $file) {
-            if ($file != "." && $file != "..") {
-                echo '<img src="' . $folderPath . $file . '" class="partner-img">';
+    // Get the last 3 blogs
+    $blogs = array_slice($data['blogs'], -3);
+
+    // Generate HTML for each blog
+    foreach ($blogs as $blog) {
+        $blogId = $blog['id'];
+        $blogTitle = $blog['title'];
+        $blogThumbnail = $blog['thumbnail'];
+
+        // Output HTML for each blog
+        echo '<a href="blog.php?id=' . $blogId . '" class="project-card">';
+        echo '<img src="./assets/BlogImages/' . $blogThumbnail . '" alt="' . $blogTitle . '">';
+        echo '<h4>' . $blogTitle . '</h4>';
+        echo '</a>';
+    }
+    ?>
+</div>
+    <div class="partners" id="partnersContainer">
+        <h3>Naši partner</h3>
+        <div class="partner-grid" id="partnerGrid">
+            <?php
+            $folderPath = './assets/PartnersLogo/';
+            $files = scandir($folderPath);
+
+            foreach ($files as $file) {
+                if ($file != "." && $file != "..") {
+                    echo '<img src="' . $folderPath . $file . '" class="partner-img">';
+                }
             }
-        }
-        ?>
+            ?>
         </div>
     </div>
-<?php include 'footer.php' ?>
-   
+
+    <?php include 'footer.php' ?>
+    <script>
+        function scrollPartners() {
+            var grid = document.getElementById('partnerGrid');
+            var scrollAmount = 2; // Adjust the scrolling speed
+            var isPaused = false;
+
+            function scroll() {
+                if (!isPaused) {
+                    grid.scrollLeft += scrollAmount;
+
+                    if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth) {
+                        grid.scrollLeft = 0; // Reset to the beginning
+                        isPaused = true;
+
+                        setTimeout(function () {
+                            isPaused = false;
+                        }, 3000); // Pause for 3 seconds
+                    }
+                }
+            }
+
+            var scrollInterval = setInterval(scroll, 50); // Adjust the interval as needed
+        }
+
+        // Call the scrollPartners function when the document is ready
+        document.addEventListener('DOMContentLoaded', scrollPartners);
+
+
+    </script>
 </body>
 
 </html>

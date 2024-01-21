@@ -9,10 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<style scoped>
-
-</style>
-
 <body>
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner" role="listbox">
@@ -33,14 +29,15 @@
                 ?>
                 <div class="item <?= $activeClass ?>">
                     <div class="slide">
-                        <div class="img-container">
-                            <img src="./assets/ProjectsImages/<?= $project['thumbnail'] ?>" alt="Slide" />
-                        </div>
+                        
                         <div class="text">
                             <h2>
                                 <?= $project['title'] ?>
                             </h2>
                             <a href="project.php?id=<?= $project['id'] ?>">Pogledaj detalje projekta</a>
+                        </div>
+                        <div class="img-container">
+                            <img src="./assets/ProjectsImages/<?= $project['thumbnail'] ?>" alt="Slide" />
                         </div>
                     </div>
                 </div>
@@ -54,7 +51,7 @@
     <script>
         $(document).ready(function () {
             // Activate Carousel
-            $("#myCarousel").carousel({ interval: 4000, pause: false });
+            $("#myCarousel").carousel({ interval: 5000, pause: false });
         });
     </script>
 

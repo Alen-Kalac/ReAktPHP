@@ -10,7 +10,7 @@
 
 <body>
     <nav>
-        <h1>ReAKT</h1>
+       <a class="logo" href="index.php"> <h1>ReAKT</h1></a>
         <div class="link-container">
             <a href="index.php">Početna</a>
             <a href="projects.php">Projekti</a>
