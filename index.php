@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
     <title>Početna - ReAKT</title>
-    <link rel="stylesheet" href="./styles/style.scss">
+    <link rel="stylesheet" href="./styles/style.css?v=1.2">
 
 </head>
 <style>
@@ -65,7 +65,7 @@
     <div class="projects-bg">
         <div class="projects">
             <div class="text">
-                <h2>Realizovani projekti</h2>
+                <h2>Naši projekti</h2>
                 <p>
                     Udruženje "ReAkt" je ostvarilo značajne projekte na različitim
                     poljima, obuhvatajući teme kao što su aktivizam, psihološko
@@ -75,34 +75,34 @@
                     promena.
                 </p>
             </div>
-
-            <div class="cta">
-                <a href="projects.php">Pogledaj sve projekte</a>
-            </div>
         </div>
-    </div>
-    <div class="projects-grid">
-        <?php
-        // Read data from data.json
-        $jsonData = file_get_contents('data.json');
-        $data = json_decode($jsonData, true);
+        <div class="projects-grid">
+            <?php
+            // Read data from data.json
+            $jsonData = file_get_contents('data.json');
+            $data = json_decode($jsonData, true);
 
-        // Get the last 3 projects
-        $projects = array_slice($data['projects'], -3);
+            // Get the last 3 projects
+            $projects = array_slice($data['projects'], -3);
 
-        // Generate HTML for each project
-        foreach ($projects as $project) {
-            $projectId = $project['id'];
-            $projectTitle = $project['title'];
-            $projectThumbnail = $project['thumbnail'];
+            // Generate HTML for each project
+            foreach ($projects as $project) {
+                $projectId = $project['id'];
+                $projectTitle = $project['title'];
+                $projectThumbnail = $project['thumbnail'];
 
-            // Output HTML for each project
-            echo '<a href="project.php?id=' . $projectId . '" class="project-card">';
-            echo '<img src="./assets/ProjectsImages/' . $projectThumbnail . '" alt="' . $projectTitle . '">';
-            echo '<h4>' . $projectTitle . '</h4>';
-            echo '</a>';
-        }
-        ?>
+                // Output HTML for each project
+                echo '<a href="project.php?id=' . $projectId . '" class="project-card">';
+                echo '<img src="./assets/ProjectsImages/' . $projectThumbnail . '" alt="' . $projectTitle . '">';
+                echo '<h4>' . $projectTitle . '</h4>';
+                echo '</a>';
+            }
+            ?>
+
+        </div>
+        <div class="cta">
+            <a href="projects.php">Pogledaj sve naše projekte</a>
+        </div>
     </div>
     <div class="therapy">
         <h2>Psihološko savetovanje</h2>
@@ -125,31 +125,41 @@
         </div>
 
     </div>
+    <h2 class="last-posts">
+        Poslednje objave
+    </h2>
     <div class="projects-grid">
-    <?php
-    // Read data from data.json
-    $jsonData = file_get_contents('data.json');
-    $data = json_decode($jsonData, true);
+        <?php
+        // Read data from data.json
+        $jsonData = file_get_contents('data.json');
+        $data = json_decode($jsonData, true);
 
-    // Get the last 3 blogs
-    $blogs = array_slice($data['blogs'], -3);
+        // Get the last 3 blogs
+        $blogs = array_slice($data['blogs'], -3);
 
-    // Generate HTML for each blog
-    foreach ($blogs as $blog) {
-        $blogId = $blog['id'];
-        $blogTitle = $blog['title'];
-        $blogThumbnail = $blog['thumbnail'];
+        // Generate HTML for each blog
+        foreach ($blogs as $blog) {
+            $blogId = $blog['id'];
+            $blogTitle = $blog['title'];
+            $blogDescription = $blog['description'];
+            $blogThumbnail = $blog['thumbnail'];
 
-        // Output HTML for each blog
-        echo '<a href="blog.php?id=' . $blogId . '" class="project-card">';
-        echo '<img src="./assets/BlogImages/' . $blogThumbnail . '" alt="' . $blogTitle . '">';
-        echo '<h4>' . $blogTitle . '</h4>';
-        echo '</a>';
-    }
-    ?>
-</div>
+            // Output HTML for each blog
+            echo '<a href="blog.php?id=' . $blogId . '" class="project-card">';
+            echo '<img src="./assets/BlogImages/' . $blogThumbnail . '" alt="' . $blogTitle . '">';
+            echo '<h4>' . $blogTitle . '</h4>';
+            echo '<p>' . strip_tags($blogDescription) . '</p>';
+
+
+            echo '</a>';
+        }
+        ?>
+    </div>
+    <div class="cta">
+        <a href="blog.php">Pogledaj sve objave</a>
+    </div>
     <div class="partners" id="partnersContainer">
-        <h3>Naši partner</h3>
+        <h3>Naši partneri</h3>
         <div class="partner-grid" id="partnerGrid">
             <?php
             $folderPath = './assets/PartnersLogo/';

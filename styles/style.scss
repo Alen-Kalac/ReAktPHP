@@ -9,12 +9,13 @@
 }
 
 a {
-    font-family: 'Roboto', sans-serif !important;
+
     font-weight: bold;
 
 }
 
 body {
+    width: 100%;
     background-color: #FBFCFF !important;
 }
 
@@ -40,6 +41,7 @@ html {
 
     }
 }
+
 
 :root {
     --mainColor: rgb(95, 168, 211);
@@ -173,6 +175,10 @@ nav {
 .promo-carousel {
     background-image: url("../assets/top-bg.svg");
     background-size: cover;
+
+    @media only screen and (max-width: 600px) {
+        background: none;
+    }
 
     .item {
         padding: 5%;
@@ -365,6 +371,7 @@ nav {
                 }
 
                 p {
+                    line-height: 1.8vh;
                     font-size: 1.8vh;
                 }
             }
@@ -413,7 +420,6 @@ nav {
             padding-top: 5%;
             justify-content: space-between;
 
-            img {}
 
             p {
                 width: 80%;
@@ -426,22 +432,25 @@ nav {
 }
 
 .projects-bg {
-    background-image: url('../assets/Projects.jpg');
-    background-position: top right;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
     .projects {
-        color: var(--white);
-        padding: 2% 5%;
-        background-color: rgba(19, 42, 116, 0.308);
-        backdrop-filter: blur(2px);
-        min-height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         .text {
             h2 {
+                padding: 1% 0;
+                text-align: center;
+                background-color: var(--mainColor);
+                color: var(--white);
                 font-size: 3rem;
+                margin: 0;
                 margin-bottom: 1.5rem;
             }
 
@@ -450,48 +459,26 @@ nav {
                 text-align: justify;
                 line-height: 2rem;
                 font-weight: 500;
+                padding: 1% 5%;
             }
         }
 
-        .cta {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
 
-            a {
-                margin: auto;
-                text-decoration: none;
-                color: var(--white);
-                font-size: 3rem;
-                font-weight: bold;
-                padding: 10px;
-                text-decoration: underline;
-                text-decoration-color: transparent;
-                text-underline-offset: 0px;
-                text-decoration-skip-ink: none;
-
-                &:hover {
-                    text-underline-offset: 15px;
-                    text-decoration-color: var(--mainColor);
-
-                    transition: 0.4s;
-                }
-            }
-        }
     }
 
     @media only screen and (max-width: 600px) {
         background-position: bottom;
 
         .projects {
-            padding: 2% 5%;
+
 
             .text {
                 h2 {
                     text-align: center;
                     font-size: 3.4vh;
                     margin-bottom: 3vh;
+
+                    padding: 4% 2%;
                 }
 
                 p {
@@ -521,6 +508,7 @@ nav {
 
     .project-card {
         border-radius: 10px;
+        padding-bottom: 3%;
         overflow: hidden;
         text-decoration: none;
         width: 100%;
@@ -539,12 +527,27 @@ nav {
         }
 
         h4 {
+            margin: 0;
+            padding: 3% 2%;
             display: flex;
             text-align: center;
             align-items: center;
             justify-content: center;
-            height: 100%;
             font-size: 2.5vh;
+        }
+
+        p {
+            font-size: 1.8vh;
+            margin: 0;
+            padding: 0  2%;
+            overflow: hidden;
+            text-align: justify;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            /* Limit the number of lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            /* Add ellipsis for overflow text */
         }
 
         &:hover {
@@ -561,6 +564,48 @@ nav {
     }
 }
 
+.cta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4vh;
+
+    a {
+        margin: auto;
+        text-decoration: none;
+        color: var(--mainColor);
+        font-size: 2rem;
+        border-radius: 10px;
+        font-weight: bold;
+        padding: 10px;
+
+        background-color: var(--mainColor);
+        color: var(--white);
+
+
+        &:hover {
+            background-color: var(--mainColorDarker);
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.4s;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        padding-top: 4vh;
+
+
+        a {
+            font-size: 3.4vh;
+            text-underline-offset: 1vh;
+            text-decoration-color: var(--mainColor);
+
+        }
+    }
+}
+
 .therapy {
     background-image: url('../assets/divider1.svg');
 
@@ -574,9 +619,9 @@ nav {
         padding: 1% 0;
         margin: 0;
         width: 100%;
-        text-align: left;
+        text-align: center;
         font-size: 3rem;
-        padding-left: 5%;
+
         color: var(--white);
     }
 
@@ -585,7 +630,7 @@ nav {
         background-size: 33%;
         padding: 2% 5%;
         background-repeat: no-repeat;
-        background-position:  95%;
+        background-position: 95%;
         display: flex;
         justify-content: space-between;
 
@@ -605,6 +650,8 @@ nav {
                 text-align: justify;
                 line-height: 2rem;
                 font-weight: 500;
+                width: 700px;
+                max-width: 100%;
 
                 span {
                     &:first-child {
@@ -661,6 +708,7 @@ nav {
 
         .content {
             padding: 2% 5%;
+            padding-bottom: 3rem;
             flex-direction: column-reverse;
             background-size: 100%;
             background-position: top;
@@ -687,6 +735,24 @@ nav {
         a {
             margin: auto;
         }
+    }
+}
+
+.last-posts {
+
+    padding: 1% 0;
+    text-align: center;
+    background-color: var(--mainColor);
+    color: var(--white);
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 1.5rem;
+
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+        font-size: 3.4vh;
+        margin-bottom: 3vh;
+        padding: 4% 2%;
     }
 }
 
@@ -790,9 +856,9 @@ nav {
         padding: 1% 0;
         margin: 0;
         width: 100%;
-        text-align: left;
+        text-align: center;
         font-size: 3rem;
-        padding-left: 5%;
+
         color: var(--white);
     }
 

@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "watch:sass": "node-sass -w styles/style.css styles/style.css --output-style compressed"
-},
+    "watch:sass": "node-sass -w styles/style.scss styles/style.css --output-style compressed"
+  },
   "dependencies": {
     "sass": "^1.69.7"
   }

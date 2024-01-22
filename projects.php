@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekti - ReAKT</title>
     <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
-    <link rel="stylesheet" href="./styles/style.scss"> <!-- Add your stylesheet link here -->
+    <link rel="stylesheet" href="./styles/style.css"> <!-- Add your stylesheet link here -->
 </head>
 <body>
     <?php include "navbar.php"; ?>

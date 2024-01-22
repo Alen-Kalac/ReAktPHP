@@ -18,6 +18,11 @@
             <p>Click to manage projects.</p>
             <a href="projectsAdmin.php">Go to Projects Admin</a>
         </div>
+        <div>
+            <h3>Promo</h3>
+            <p>Click to manage projects.</p>
+            <a href="promo.php">Go to Promo Admin</a>
+        </div>
     </div>
 </body>
 </html>
