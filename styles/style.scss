@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: "Times New Roman", Times, serif !important;
+    font-family: 'Roboto Slab', serif !important;
 }
 
 a {
 
     font-weight: bold;
+
+    &:hover {
+        text-decoration-color: coral !important;
+    }
 
 }
 
@@ -44,9 +48,9 @@ html {
 
 
 :root {
-    --mainColor: rgb(95, 168, 211);
+    --mainColor: #b0c4de;
     --mainColorDarker: rgb(56, 110, 141);
-
+    --black: rgb(36, 36, 36);
     --white: #f3f3f3;
 }
 
@@ -221,7 +225,7 @@ nav {
                     width: 100%;
                     color: rgb(27, 27, 27);
                     max-width: 90%;
-                    font-size: 6vh;
+                    font-size: 2.5rem;
                     margin-bottom: 2rem;
                     opacity: 0;
                     transform: translateX(-20px);
@@ -233,7 +237,7 @@ nav {
                 p {
                     color: rgb(27, 27, 27);
                     max-width: 90%;
-                    font-size: 2vh;
+                    font-size: 1.1rem;
                     font-weight: bold;
                     opacity: 0;
                     transform: translateX(-20px);
@@ -243,18 +247,19 @@ nav {
                 a {
                     text-transform: uppercase;
                     border-radius: 10px;
-                    padding: 1.5vh;
-                    background-color: var(--mainColor);
-                    color: var(--white);
+                    color: var(--black);
                     font-size: 1.5vh;
-                    text-decoration: none;
                     opacity: 0;
                     transform: translateX(-20px);
                     animation: fadeInUp 2s ease forwards;
-                    color: var(--white);
+
+                    text-decoration: underline;
+                    text-underline-offset: 0vh;
+                    text-decoration-color: transparent;
 
                     &:hover {
-                        background-color: var(--mainColorDarker);
+                        text-decoration: underline;
+                        text-underline-offset: 0.6vh;
                         transition: 0.4s;
                     }
                 }
@@ -293,6 +298,7 @@ nav {
                     background: none;
 
                     h2 {
+                        height: 100%;
                         width: 100% !important;
                         max-width: 100% !important;
                         font-size: 3.5vh;
@@ -349,7 +355,7 @@ nav {
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 line-height: 1.8rem;
                 font-weight: 500;
             }
@@ -384,7 +390,7 @@ nav {
 }
 
 .goals {
-    height: 60vh;
+    height: fit-content;
     padding: 3% 5%;
     display: grid;
     gap: 2%;
@@ -402,10 +408,10 @@ nav {
 
         p {
             padding-bottom: 3%;
-            border-bottom: 2px solid var(--mainColor);
+            border-bottom: 2px solid coral;
             width: 70%;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin: 0;
         }
     }
@@ -432,6 +438,7 @@ nav {
 }
 
 .projects-bg {
+    background-color: var(--mainColor);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -447,15 +454,14 @@ nav {
             h2 {
                 padding: 1% 0;
                 text-align: center;
-                background-color: var(--mainColor);
-                color: var(--white);
-                font-size: 3rem;
+                color: var(--black);
+                font-size: 2.5rem;
                 margin: 0;
                 margin-bottom: 1.5rem;
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 text-align: justify;
                 line-height: 2rem;
                 font-weight: 500;
@@ -516,9 +522,9 @@ nav {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        background-color: var(--mainColor);
-        border: 2px solid var(--mainColor);
-        color: var(--white);
+        background-color: var(--white);
+        border: 2px solid var(--white);
+        color: var(--black);
 
         img {
             width: 100%;
@@ -527,19 +533,21 @@ nav {
         }
 
         h4 {
+
             margin: 0;
             padding: 3% 2%;
             display: flex;
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 2.5vh;
+            font-size: 2.2vh;
         }
 
         p {
-            font-size: 1.8vh;
+            font-size: 0.8rem;
+            line-height: 1rem;
             margin: 0;
-            padding: 0  2%;
+            padding: 0 2%;
             overflow: hidden;
             text-align: justify;
             display: -webkit-box;
@@ -572,22 +580,21 @@ nav {
     padding-bottom: 4vh;
 
     a {
+        text-transform: uppercase;
         margin: auto;
-        text-decoration: none;
-        color: var(--mainColor);
-        font-size: 2rem;
+        font-size: 2.2vh;
         border-radius: 10px;
         font-weight: bold;
         padding: 10px;
-
-        background-color: var(--mainColor);
-        color: var(--white);
-
+        color: var(--black);
+        text-decoration: underline;
+        text-underline-offset: 0vh;
+        text-decoration-color: transparent;
 
         &:hover {
-            background-color: var(--mainColorDarker);
-            color: var(--white);
-            text-decoration: none;
+            color: var(--black);
+            text-decoration: underline;
+            text-underline-offset: 0.6vh;
             transition: 0.4s;
         }
     }
@@ -598,7 +605,7 @@ nav {
 
 
         a {
-            font-size: 3.4vh;
+            font-size: 2vh !important;
             text-underline-offset: 1vh;
             text-decoration-color: var(--mainColor);
 
@@ -608,21 +615,21 @@ nav {
 
 .therapy {
     background-image: url('../assets/divider1.svg');
-
+    color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 
     h2 {
-        background-color: var(--mainColor);
+
         padding: 1% 0;
         margin: 0;
         width: 100%;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.5rem;
 
-        color: var(--white);
+        color: var(--black);
     }
 
     .content {
@@ -646,7 +653,7 @@ nav {
 
 
             p {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 text-align: justify;
                 line-height: 2rem;
                 font-weight: 500;
@@ -680,20 +687,16 @@ nav {
     a {
         text-transform: uppercase;
         border-radius: 10px;
-        padding: 20px;
-        background-color: var(--mainColor);
-        color: var(--white);
         font-size: 2vh;
-        text-decoration: none;
-
-
-        color: var(--white);
+        color: var(--black);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-underline-offset: 0vh;
 
         &:hover {
-            color: var(--white);
-
-            text-decoration: none;
-            background-color: var(--mainColorDarker);
+            text-decoration-color: coral;
+            text-underline-offset: 0.6vh;
+            color: var(--black);
             transition: 0.4s;
         }
     }
@@ -739,20 +742,22 @@ nav {
 }
 
 .last-posts {
-
-    padding: 1% 0;
-    text-align: center;
     background-color: var(--mainColor);
-    color: var(--white);
-    font-size: 3rem;
-    margin: 0;
-    margin-bottom: 1.5rem;
+    h2 {
 
-    @media only screen and (max-width: 600px) {
+        padding: 1% 0;
         text-align: center;
-        font-size: 3.4vh;
-        margin-bottom: 3vh;
-        padding: 4% 2%;
+        color: var(--black);
+        font-size: 2.5rem;
+        margin: 0;
+        margin-bottom: 1.5rem;
+
+        @media only screen and (max-width: 600px) {
+            text-align: center;
+            font-size: 3.4vh;
+            margin-bottom: 3vh;
+            padding: 4% 2%;
+        }
     }
 }
 
@@ -800,7 +805,7 @@ nav {
             h3 {
                 color: var(--white);
                 height: 100%;
-                font-size: 2.2vh;
+                font-size: 2vh;
                 text-align: justify;
                 display: flex;
                 text-align: center;
@@ -852,14 +857,14 @@ nav {
     overflow: hidden;
 
     h3 {
-        background-color: var(--mainColor);
+       
         padding: 1% 0;
         margin: 0;
         width: 100%;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.5rem;
 
-        color: var(--white);
+        color: var(--black);
     }
 
     .partner-grid {
@@ -900,7 +905,7 @@ nav {
     color: var(--white);
     padding: 1% 5%;
     width: 100%;
-    background-color: var(--mainColor);
+    background-color: var(--black);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -959,7 +964,7 @@ nav {
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 400;
         margin-bottom: 3rem;
     }
@@ -1026,11 +1031,12 @@ nav {
         border-bottom: 2px solid var(--mainColor);
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 2rem;
         }
 
         p {
+            font-size: 1.1rem;
             font-family: 'Roboto', sans-serif !important;
             text-align: justify;
         }

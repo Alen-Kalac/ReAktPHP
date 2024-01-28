@@ -14,8 +14,8 @@
         <div class="link-container">
             <a href="index.php">Početna</a>
             <a href="projects.php">Projekti</a>
-            <a href="blog.php">Blog</a>
-            <!-- <a href="therapy.php">Savetovalište</a> -->
+            <a href="blog.php">Objave</a>
+            <a href="therapy.php">Savetovalište</a>
             <a href="contact.php">Kontakt</a>
         </div>
         <div class="hamburger-icon" onclick="toggleMenu()">☰</div>

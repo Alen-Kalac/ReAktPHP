@@ -7,21 +7,21 @@
     <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
     <title>Početna - ReAKT</title>
     <link rel="stylesheet" href="./styles/style.css?v=1.2">
-
 </head>
-<style>
-
-</style>
 
 <body>
+    <?php include 'navbar.php' ?>
+
     <?php
-    include 'navbar.php'
-        ?>
+    // Read data from data.json
+    $jsonData = file_get_contents('data.json');
+    $data = json_decode($jsonData, true);
+    ?>
+
     <div class="promo-carousel">
-        <?php
-        include 'carousel.php'
-            ?>
+        <?php include 'carousel.php' ?>
     </div>
+
     <div class="mission">
         <div class="mission-container">
             <img src="./assets/Misija.svg" alt="" />
@@ -36,6 +36,7 @@
             </div>
         </div>
     </div>
+
     <div class="goals">
         <div class="goal">
             <img src="./assets/Aktivizam.svg" alt="" />
@@ -62,6 +63,7 @@
             <p>Socijalna pravda</p>
         </div>
     </div>
+
     <div class="projects-bg">
         <div class="projects">
             <div class="text">
@@ -76,12 +78,9 @@
                 </p>
             </div>
         </div>
+
         <div class="projects-grid">
             <?php
-            // Read data from data.json
-            $jsonData = file_get_contents('data.json');
-            $data = json_decode($jsonData, true);
-
             // Get the last 3 projects
             $projects = array_slice($data['projects'], -3);
 
@@ -98,12 +97,13 @@
                 echo '</a>';
             }
             ?>
-
         </div>
+
         <div class="cta">
-            <a href="projects.php">Pogledaj sve naše projekte</a>
+            <a href="projects.php">Svi projekti</a>
         </div>
     </div>
+
     <div class="therapy">
         <h2>Psihološko savetovanje</h2>
         <div class="content">
@@ -116,24 +116,18 @@
                     <span>Individualne i grupne savetodavno-terapijske usluge za decu, mlade i odrasle</span>
                     <span>Psihoedukacija</span>
                     <span>Karijerno savetovanje</span>
-
                 </p>
 
-                <a href="contact.php">Zakazi savetovanje</a>
+                <a href="therapy.php">Zakazi savetovanje</a>
             </div>
             <img src="./assets/Therapy.svg" alt="">
         </div>
-
     </div>
-    <h2 class="last-posts">
-        Poslednje objave
-    </h2>
+
+    <div class="last-posts">
+    <h2>Poslednje objave</h2>
     <div class="projects-grid">
         <?php
-        // Read data from data.json
-        $jsonData = file_get_contents('data.json');
-        $data = json_decode($jsonData, true);
-
         // Get the last 3 blogs
         $blogs = array_slice($data['blogs'], -3);
 
@@ -143,21 +137,22 @@
             $blogTitle = $blog['title'];
             $blogDescription = $blog['description'];
             $blogThumbnail = $blog['thumbnail'];
+            $blogImageSrc = "./assets/BlogImages/" . $blogThumbnail;
 
             // Output HTML for each blog
             echo '<a href="blog.php?id=' . $blogId . '" class="project-card">';
-            echo '<img src="./assets/BlogImages/' . $blogThumbnail . '" alt="' . $blogTitle . '">';
+            echo '<img src="' . $blogImageSrc . '" alt="' . $blogTitle . '">';
             echo '<h4>' . $blogTitle . '</h4>';
             echo '<p>' . strip_tags($blogDescription) . '</p>';
-
-
             echo '</a>';
         }
         ?>
     </div>
     <div class="cta">
-        <a href="blog.php">Pogledaj sve objave</a>
+        <a href="blog.php">sve objave</a>
     </div>
+</div>
+
     <div class="partners" id="partnersContainer">
         <h3>Naši partneri</h3>
         <div class="partner-grid" id="partnerGrid">
@@ -173,7 +168,6 @@
             ?>
         </div>
     </div>
-
     <?php include 'footer.php' ?>
     <script>
         function scrollPartners() {
