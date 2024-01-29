@@ -93,10 +93,9 @@
     echo '</form>';
     echo '</div>';
 
-    foreach ($projects['projects'] as $project) {
+    foreach (array_reverse($projects['projects']) as $project) {
         echo '<div>';
         echo '<h2>' . $project['title'] . '</h2>';
-        echo '<p>' . $project['description'] . '</p>';
         echo '<img src="../assets/ProjectsImages/' . $project['thumbnail'] . '" alt="' . $project['title'] . '" style="max-width: 200px;">';
         echo '<form method="post" action="">';
         echo '<input type="hidden" name="project_id" value="' . $project['id'] . '">';

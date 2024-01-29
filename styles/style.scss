@@ -20,7 +20,7 @@ a {
 
 body {
     width: 100%;
-    background-color: #FBFCFF !important;
+    background-color: var(--white) !important;
 }
 
 html {
@@ -452,12 +452,12 @@ nav {
 
         .text {
             h2 {
-                padding: 1% 0;
+                padding: 2% 0;
                 text-align: center;
                 color: var(--black);
                 font-size: 2.5rem;
                 margin: 0;
-                margin-bottom: 1.5rem;
+
             }
 
             p {
@@ -623,7 +623,7 @@ nav {
 
     h2 {
 
-        padding: 1% 0;
+        padding: 2% 0;
         margin: 0;
         width: 100%;
         text-align: center;
@@ -743,14 +743,15 @@ nav {
 
 .last-posts {
     background-color: var(--mainColor);
+
     h2 {
 
-        padding: 1% 0;
+        padding: 2% 0;
         text-align: center;
         color: var(--black);
         font-size: 2.5rem;
         margin: 0;
-        margin-bottom: 1.5rem;
+
 
         @media only screen and (max-width: 600px) {
             text-align: center;
@@ -857,7 +858,7 @@ nav {
     overflow: hidden;
 
     h3 {
-       
+
         padding: 1% 0;
         margin: 0;
         width: 100%;
@@ -1138,6 +1139,89 @@ nav {
                     justify-content: center;
                 }
             }
+        }
+    }
+}
+
+.therapy-page {
+    min-height: 90vh;
+    position: relative;
+    width: 100%;
+   padding: 2% 5%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+
+//Generating background for bottom half of a page
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: var(--mainColor);
+        z-index: -1;
+    }
+    h1{
+     text-align: center;
+     font-size: 2.5rem;
+    }
+    .grid-wrapper{
+       
+        .services-grid{
+            height: fit-content;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1%;
+            .card{
+                border: 1px solid var(--mainColor);
+                background-color: var(--white);
+                border-radius: 1vh;
+                padding: 3%;
+                text-align: center;
+
+                img{
+                    width: 100%;
+                    object-fit: contain;
+
+                }
+                h2{
+                    font-size: 1.2rem;
+                    margin-bottom: 1.5rem;
+                }
+                p{
+                    font-size: 0.9rem;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    .therapy-cta{
+        font-size: 1.2rem;
+        color: var(--white);
+        text-align: center;
+        border-bottom: 2px solid coral;
+    }
+    @media only screen and (max-width: 600px){
+        height: fit-content;
+        h1{
+            font-size: 3vh;
+            padding: 2vh 0 ;
+        }
+        .grid-wrapper{
+            .services-grid{
+               display: flex;
+               flex-wrap: wrap;
+               .card{
+                width: 100%;
+                margin-bottom: 3%;
+               }
+            }
+        }
+        .therapy-cta{
+            margin: 2rem 0;
         }
     }
 }

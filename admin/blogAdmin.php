@@ -83,7 +83,7 @@
     }
 
     // Display blog posts with edit options
-    foreach ($blogs['blogs'] as $blog) {
+    foreach (array_reverse($blogs['blogs']) as $blog) {
         echo '<div>';
         echo '<h2>' . $blog['title'] . '</h2>';
         echo '<img src="../assets/BlogImages/' . $blog['thumbnail'] . '" alt="' . $blog['title'] . '" style="max-width: 200px;">';
