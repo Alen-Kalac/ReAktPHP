@@ -19,39 +19,27 @@
             <div class="services-grid">
                 <div class="card">
                     <img src="./assets/Savetovanje/Procena.svg" alt="Image 1">
-                    <h2>Psihološka Procena</h2>
-                    <p>Psihološka procena je sistematski proces prikupljanja i analiziranja informacija o pojedincu.
-                        Metode uključuju upotrebu psiholoških testova, intervjuja i opservacija. Psihološki testovi mogu
-                        bidi usmereneni kako na intelektualne sposobnosti tako i na karakteristike ličnosti i različita
-                        emocionalna stanja.
-                        Cilj ovog procesa je stvaranje celovitog uvida u emocionalne, kognitivne i ponašajne aspekte
-                        pojedinca. Ovi podaci se koriste u cilju psihodijagnostike, planiranje tretmana ili pružanje
-                        podrške prema individualnim potrebama.
+                    <h2>Psihološka procena </h2>
+                    <p>Psihološka procena podrazumeva korišćenje različlitih testova ličnosti i testova sposobnosti
+                        odnosno inteligencije, radi procene aktuelnog psihološkog funkcionisanja osobe.
                     </p>
                 </div>
                 <!-- Card 2 -->
                 <div class="card">
                     <img src="./assets/Savetovanje/Savetovanje.svg" alt="Image 2">
-                    <h2>Individualno Psihološko Savetovanje</h2>
-                    <p>Psihološka procena je sistematski proces prikupljanja i analiziranja informacija o pojedincu.
-                        Metode uključuju upotrebu psiholoških testova, intervjuja i opservacija. Psihološki testovi mogu
-                        bidi usmereneni kako na intelektualne sposobnosti tako i na karakteristike ličnosti i različita
-                        emocionalna stanja.
-                        Cilj ovog procesa je stvaranje celovitog uvida u emocionalne, kognitivne i ponašajne aspekte
-                        pojedinca. Ovi podaci se koriste u cilju psihodijagnostike, planiranje tretmana ili pružanje
-                        podrške prema individualnim potrebama.
+                    <h2>Individualno psihološko savetovanje </h2>
+                    <p>Ova usluga usmerena je na pružanje stručne pomoći pojedincu da razume i reši lične izazove,
+                        poboljša emocionalno blagostanje i razvije strategije za efikasno suočavanje sa stresnim i
+                        traumatičnim životnim situacijama.
 
                     </p>
                 </div>
                 <!-- Card 3 -->
                 <div class="card">
                     <img src="./assets/Savetovanje/Grupno Savetovanje.svg" alt="Image 3">
-                    <h2>Grupno Psihološko Savetovanje</h2>
-                    <p>Grupno savetovanje okuplja manju zajednicu pojedinaca sa zajedničkim izazovima, pod vođstvom
-                        stručnog psihologa. Ova forma savetovanja podstiče zajedništvo i međusobno deljenje iskustava.
-                        Psiholog moderira sesije, pružajući podršku i usmeravajući razgovore ka rešenjima.
-                        Grupno savetovanje takođe može obuhvatati i učešće na radionicama koje su osmišljene u ciju
-                        razvijanje određenih psihosocijalnih veština.
+                    <h2>Grupno psihološko savetovanje </h2>
+                    <p>Grupno savetovanje okuplja manju zajednicu pojedinaca sa zajedničkim izazovima. Ova forma
+                        savetovanja podstiče zajedništvo i međusobno deljenje iskustava.
 
                     </p>
                 </div>
@@ -59,29 +47,24 @@
                 <div class="card">
                     <img src="./assets/Savetovanje/Psihoedukacija.svg" alt="Image 4">
                     <h2>Psihoedukacija</h2>
-                    <p>Psihoedukacija je proces pružanja informacija o mentalnom zdravlju i različitim psihološkim
-                        konceptima. Ova usluga obuhvata edukativne aktivnosti kao što su radionice, predavanja ili
-                        distribucija pisanih i video materijala. Cilj je osnaživanje pojedinca da bolje razume sopstveno
-                        funkcionisanje i razvije veštine za prevazilaženje izazova u različitim životnim ulogama.
+                    <p>Psihoedukacija je proces  informisanja o mentalnom zdravlju i  psihološkim
+                        konceptima. Ova usluga obuhvata  aktivnosti kao što su radionice, predavanja ili
+                        edukativnih materijala. Cilj je osnaživanje pojedinca da bolje razume i prevaziđe  izazove u različitim životnim ulogama.
                     </p>
                 </div>
                 <!-- Card 5 -->
                 <div class="card">
                     <img src="./assets/Savetovanje/Karijera.svg" alt="Image 5">
-                    <h2>Karijerno Savetovanje</h2>
-                    <p>Karijerno savetovanje pruža podršku pojedincima u razumevanju njihovih profesionalnih ciljeva i
-                        potencijala. Kroz interakciju sa karijernim savetnikom, pojedinci mogu istražiti svoje interese,
-                        vrednosti i veštine radi informisanog planiranja karijere.
-                        U procesu karijernog savetovanja koriste se standardizovani instrumenti.
-
+                    <h2>Karijerno savetovanje </h2>
+                    <p>Profesionalna orijentacija je psihološko procenjivanje tvojih sposobnosti, ličnosti,
+                        interesovanja, motiva i očekivanja, sa ciljem da ti se pomogne u uspešnom izboru zanimanja.
                     </p>
                 </div>
             </div>
         </div>
-        <p class="therapy-cta">
-            Zakažite na <br>
-            savetovaliste.reakt@gmail.com
-        </p>
+        <a href="contact.php" class="therapy-cta">
+            Zakažite svoj termin
+</a>
     </div>
     <?php include 'footer.php' ?>
 </body>

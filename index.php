@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
-    <title>Početna - ReAKT</title>
+    <title>Početna - ReAkt</title>
     <link rel="stylesheet" href="./styles/style.css?v=1.2">
 </head>
 
@@ -109,7 +109,7 @@
         <div class="content">
             <div class="options">
                 <p>
-                    U okviru rada udruženja Reakt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
+                    U okviru rada udruženja ReAkt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
                     mladih i odraslih kroz pružanje sledećih usluga :
 
                     <span>Psihodijagnostika</span>

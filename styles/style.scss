@@ -225,7 +225,7 @@ nav {
                     width: 100%;
                     color: rgb(27, 27, 27);
                     max-width: 90%;
-                    font-size: 2.5rem;
+                    font-size: 2.3rem;
                     margin-bottom: 2rem;
                     opacity: 0;
                     transform: translateX(-20px);
@@ -247,19 +247,19 @@ nav {
                 a {
                     text-transform: uppercase;
                     border-radius: 10px;
-                    color: var(--black);
+                    padding: 1.5vh;
+                    background-color: var(--black);
+                    color: var(--white);
                     font-size: 1.5vh;
                     opacity: 0;
                     transform: translateX(-20px);
                     animation: fadeInUp 2s ease forwards;
 
-                    text-decoration: underline;
-                    text-underline-offset: 0vh;
-                    text-decoration-color: transparent;
+                    
 
                     &:hover {
-                        text-decoration: underline;
-                        text-underline-offset: 0.6vh;
+                        background-color: var(--mainColorDarker);
+                        text-decoration: none;
                         transition: 0.4s;
                     }
                 }
@@ -346,7 +346,7 @@ nav {
 
             h2 {
                 width: auto;
-                font-size: 2.5rem;
+                font-size: 2.3rem;
                 margin-bottom: 3%;
                 text-decoration-line: underline;
                 text-decoration-color: var(--white);
@@ -455,17 +455,18 @@ nav {
                 padding: 2% 0;
                 text-align: center;
                 color: var(--black);
-                font-size: 2.5rem;
+                font-size: 2.3rem;
                 margin: 0;
 
             }
 
             p {
-                font-size: 1.1rem;
+                color: white;
+                font-size: 1rem;
                 text-align: justify;
                 line-height: 2rem;
                 font-weight: 500;
-                padding: 1% 5%;
+                padding: 1% 15%;
             }
         }
 
@@ -584,17 +585,17 @@ nav {
         margin: auto;
         font-size: 2.2vh;
         border-radius: 10px;
+        background-color: var(--black);
         font-weight: bold;
         padding: 10px;
-        color: var(--black);
-        text-decoration: underline;
-        text-underline-offset: 0vh;
-        text-decoration-color: transparent;
+        color: var(--white);
+    
 
         &:hover {
-            color: var(--black);
-            text-decoration: underline;
-            text-underline-offset: 0.6vh;
+            color: var(--white);
+        background-color: var(--mainColorDarker);
+            text-decoration: none;
+          
             transition: 0.4s;
         }
     }
@@ -627,7 +628,7 @@ nav {
         margin: 0;
         width: 100%;
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
 
         color: var(--black);
     }
@@ -685,18 +686,18 @@ nav {
     }
 
     a {
+        padding: 1.5vh;
         text-transform: uppercase;
         border-radius: 10px;
         font-size: 2vh;
-        color: var(--black);
-        text-decoration: underline;
-        text-decoration-color: transparent;
-        text-underline-offset: 0vh;
+        background-color: var(--black);
+        color: var(--white);
+        
 
         &:hover {
-            text-decoration-color: coral;
-            text-underline-offset: 0.6vh;
-            color: var(--black);
+        background-color: var(--mainColorDarker);
+color: white;
+            text-decoration: none;
             transition: 0.4s;
         }
     }
@@ -749,7 +750,7 @@ nav {
         padding: 2% 0;
         text-align: center;
         color: var(--black);
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin: 0;
 
 
@@ -863,7 +864,7 @@ nav {
         margin: 0;
         width: 100%;
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
 
         color: var(--black);
     }
@@ -912,7 +913,7 @@ nav {
     align-items: center;
 
     h3 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     p {
@@ -960,7 +961,7 @@ nav {
     text-align: justify;
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin-bottom: 2rem;
     }
 
@@ -1166,7 +1167,7 @@ nav {
     }
     h1{
      text-align: center;
-     font-size: 2.5rem;
+     font-size: 2.3rem;
     }
     .grid-wrapper{
        
@@ -1188,6 +1189,7 @@ nav {
 
                 }
                 h2{
+                    min-height: 5vh;
                     font-size: 1.2rem;
                     margin-bottom: 1.5rem;
                 }
@@ -1199,10 +1201,19 @@ nav {
         }
     }
     .therapy-cta{
+        text-decoration: none;
+        cursor: pointer;
         font-size: 1.2rem;
+        background-color: var(--black);
+        padding: 1.5vh;
+        border-radius: 10px;
         color: var(--white);
         text-align: center;
-        border-bottom: 2px solid coral;
+       &:hover{
+        background-color: var(--mainColorDarker);
+        transition: 0.4s;
+        color: var(--white);
+       }
     }
     @media only screen and (max-width: 600px){
         height: fit-content;

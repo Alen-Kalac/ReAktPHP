@@ -9,7 +9,7 @@
 
 <body>
     <div class="footer">
-        <h3>ReAKT</h3>
+        <h3>ReAkt</h3>
         <div class="social-icons">
             <a href="https://www.facebook.com/reakt.np">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
