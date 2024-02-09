@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Blog Post</title>
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
 
 <body>
-
     <?php
     // Read blog posts from the local JSON file
     $blogsJson = file_get_contents('../data.json');
@@ -142,35 +142,51 @@
 
     // Display the blog post editing form
     ?>
-    <form method="post" action="" enctype="multipart/form-data" onsubmit="updateDescription()">
-        <input type="hidden" name="blog_id" value="<?php echo $blogToEdit['id']; ?>">
+    <div class="blog-edit">
+        <form method="post" action="" enctype="multipart/form-data" onsubmit="updateDescription()">
+            <input type="hidden" name="blog_id" value="<?php echo $blogToEdit['id']; ?>">
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" value="<?php echo $blogToEdit['title']; ?>" required><br>
+            <label for="title">Naslov:</label>
+            <br>
+            <input type="text" class="title" name="title" value="<?php echo $blogToEdit['title']; ?>" required><br>
 
-        <label for="description">Description:</label>
-        <div data-underline="no"  data-indent="no" data-outdent="no"
-            data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
-            data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
-            <?php echo $blogToEdit['description']; ?>
-        </div><br>
-        <input type="hidden" name="new_description_content" id="new_description_content">
-        <label for="thumbnail">Current Thumbnail:</label>
-        <img src="../assets/BlogImages/<?php echo $blogToEdit['thumbnail']; ?>" alt="Thumbnail"
-            style="max-width: 200px;"><br>
-        <label for="newThumbnail">Change Thumbnail:</label>
-        <input type="file" name="newThumbnail"><br>
+            <label for="description">Opis:</label>
+            <div class="description" data-underline="no" data-indent="no" data-outdent="no"
+                data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
+                data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
+                <?php echo $blogToEdit['description']; ?>
+            </div><br>
+            <input type="hidden" name="new_description_content" id="new_description_content">
+            <label for="thumbnail">Naslovna slika:</label>
+            <br>
+            <img class="thumbnail-preview" src="../assets/BlogImages/<?php echo $blogToEdit['thumbnail']; ?>"
+                alt="Thumbnail"><br>
+            <label for="newThumbnail">Izmeni naslovnu sliku:</label>
+            <br>
+            <input type="file" name="newThumbnail" onchange="updateThumbnailPreview(this)"><br>
 
-        <button type="submit" name="save">Save</button>
+            <button type="submit" class="submit" name="save">Sačuvaj</button>
 
-        <button type="submit" name="deleteBlog">Delete Blog</button>
-    </form>
+            <button type="submit" class="submit" name="deleteBlog">Izbriši</button>
+        </form>
+    </div>
     <script src="https://unpkg.com/tiny-editor/dist/bundle.js"></script>
     <script>
         // Function to update the hidden input with the innerHTML of the div
         function updateDescription() {
             var editorContent = document.getElementById('myEditor').innerHTML;
             document.getElementById('new_description_content').value = editorContent;
+        }
+
+        // Function to update the thumbnail preview with the newly uploaded image
+        function updateThumbnailPreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.querySelector('.thumbnail-preview').setAttribute('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 </body>

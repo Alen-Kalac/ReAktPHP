@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Project</title>
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -151,44 +152,49 @@
 
     // Display the project editing form
     ?>
-    <form method="post" action="" enctype="multipart/form-data" onsubmit="updateDescription()">
-        <input type="hidden" name="project_id" value="<?php echo $projectToEdit['id']; ?>">
+    <div class="project-edit">
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" value="<?php echo $projectToEdit['title']; ?>" required><br>
-
-        <label for="description">Description:</label>
-        <div data-underline="no"  data-indent="no" data-outdent="no"
-             data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
-            data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
-            <?php echo $projectToEdit['description']; ?>
-        </div><br>
-        <input type="hidden" name="new_description_content" id="new_description_content">
-
-
-        <label for="thumbnail">Current Thumbnail:</label>
-        <img src="../assets/ProjectsImages/<?php echo $projectToEdit['thumbnail']; ?>" alt="Thumbnail"
-            style="max-width: 200px;"><br>
-        <label for="newThumbnail">Change Thumbnail:</label>
-        <input type="file" name="newThumbnail"><br>
-
-        <label for="images">Images:</label>
-        <div style="display: flex; flex-wrap: wrap;">
-            <?php
-            foreach ($projectToEdit['images'] as $image) {
-                echo '<div style="margin-right: 10px; margin-bottom: 10px;">';
-                echo '<img src="../assets/ProjectsImages/' . $image . '" alt="' . $projectToEdit['title'] . '" style="max-width: 100px; max-height: 100px;">';
-                echo '<br>';
-                echo '<button type="submit" name="deleteImage" value="' . $image . '">Delete</button>';
-                echo '</div>';
-            }
-            ?>
-        </div>
-        <input type="file" name="images[]" multiple><br>
-
-        <button type="submit" name="save">Save</button>
-        <button type="submit" name="deleteProject">Delete Project</button>
-    </form>
+        <form method="post" action="" enctype="multipart/form-data" onsubmit="updateDescription()">
+            <input  type="hidden" name="project_id" value="<?php echo $projectToEdit['id']; ?>">
+    
+            <label for="title">Naslov:</label>
+            <br>
+            <input class="title" type="text" name="title" value="<?php echo $projectToEdit['title']; ?>" required><br>
+    
+            <label for="description">Opis:</label>
+            <div data-underline="no"  data-indent="no" data-outdent="no"
+                 data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
+                data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
+                <?php echo $projectToEdit['description']; ?>
+            </div><br>
+            <input type="hidden" name="new_description_content" id="new_description_content">
+    
+    
+            <label for="thumbnail">Naslovna slika:</label>
+            <br>
+            <img class="thumbnail-preview" src="../assets/ProjectsImages/<?php echo $projectToEdit['thumbnail']; ?>" alt="Thumbnail">
+            <br>
+            <label for="newThumbnail">Izmeni naslovnu sliku:</label>
+            <br>
+            <input type="file" name="newThumbnail"><br>
+    
+            <label for="images">Slike:</label>
+            <div class="images" style="display: flex; flex-wrap: wrap;">
+                <?php
+                foreach ($projectToEdit['images'] as $image) {
+                    echo '<div>';
+                    echo '<img src="../assets/ProjectsImages/' . $image . '" alt="' . $projectToEdit['title'] . '">';
+                    echo '<button type="submit" name="deleteImage" value="' . $image . '">Izbriši</button>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+            <input type="file" name="images[]" multiple><br>
+    
+            <button type="submit" class="submit" name="save">Sačuvaj</button>
+            <button type="submit" class="submit" name="deleteProject">Izbriši</button>
+        </form>
+    </div>
     <script src="https://unpkg.com/tiny-editor/dist/bundle.js"></script>
 
     <script>

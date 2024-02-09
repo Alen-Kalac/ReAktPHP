@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects Admin</title>
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -71,39 +72,43 @@
     }
 
     // Display projects with edit and delete options
-    echo '<div>';
-    echo '<h2>Dodaj novi projekat</h2>';
+    echo '<div class="admin-project">';
     // Form to add a new project
     echo '<form method="post" action="" enctype="multipart/form-data">';
-    echo '<label for="new_title">Title:</label>';
-    echo '<input type="text" name="new_title" required><br>';
-    echo '<label for="new_description">Description:</label>';
+    echo '<h2 class="page-title">Dodaj novi projekat</h2>';
+    echo '<label for="new_title">Naslov:</label>' . '<br>';
+    echo '<input class="title" type="text" name="new_title" required><br>';
+    echo '<label for="new_description">Opis:</label>';
     echo '<div data-underline="no"  data-indent="no" data-outdent="no"
     data-insertunorderedlist="no" data-insertorderedlist="no" data-forecolor="no" data-fontname="no"
     data-formatblock="no" data-tiny-editor name="new_description" required id="myEditor">
 </div>';
     echo '<input type="hidden" name="new_description_content" id="new_description_content">';
-    echo '<label for="new_thumbnail">Thumbnail:</label>';
+    echo '<label for="new_thumbnail">Naslovna slika:</label><br>' ;
     echo '<input type="file" name="new_thumbnail" onchange="previewThumbnail(this)"><br>';
-    echo '<img id="thumbnailPreview" style="max-width: 200px; display: none;"><br>';
-    echo '<label for="new_images">Images:</label>';
+    echo '<img id="thumbnailPreview">';
+    echo '<label for="new_images">Slike:</label><br>';
     echo '<input type="file" name="new_images[]" multiple onchange="previewImages(this)"><br>';
     echo '<div id="imagesPreview"></div>';
-    echo '<button type="submit" name="add" onclick="prepareDescriptionContent()">Dodaj</button>';
+    echo '<button class="submit" type="submit" name="add" onclick="prepareDescriptionContent()">Dodaj</button>';
     echo '</form>';
-    echo '</div>';
-
+    
+    echo '<div class="project-grid">';
+    
     foreach (array_reverse($projects['projects']) as $project) {
-        echo '<div>';
+        echo '<div class="project-post">';
         echo '<h2>' . $project['title'] . '</h2>';
         echo '<img src="../assets/ProjectsImages/' . $project['thumbnail'] . '" alt="' . $project['title'] . '" style="max-width: 200px;">';
         echo '<form method="post" action="">';
         echo '<input type="hidden" name="project_id" value="' . $project['id'] . '">';
-        echo '<button type="submit" name="edit">Edit</button>';
+        echo '<button type="submit" name="edit">Izmeni</button>';
         // Add delete options here if needed
         echo '</form>';
         echo '</div>';
     }
+    echo '</div>';
+    echo '</div>';
+    
     ?>
 
     <script>
@@ -136,7 +141,10 @@
                     const img = document.createElement('img');
                     img.src = e.target.result;
                     img.alt = file.name;
-                    img.style.maxWidth = '200px';
+                    img.style.height = '150px';
+                    img.style.paddingRight = '10px';
+                    img.style.paddingBottom = '10px';
+
                     previewContainer.appendChild(img);
                 }
 

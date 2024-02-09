@@ -141,7 +141,7 @@
 
             // Output HTML for each blog
             echo '<a href="blog.php?id=' . $blogId . '" class="project-card">';
-            echo '<img src="' . $blogImageSrc . '" alt="' . $blogTitle . '">';
+            echo '<img  src="' . $blogImageSrc . '" alt="' . $blogTitle . '" loading="lazy">';
             echo '<h4>' . $blogTitle . '</h4>';
             echo '<p>' . strip_tags($blogDescription) . '</p>';
             echo '</a>';

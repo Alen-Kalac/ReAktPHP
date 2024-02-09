@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner" role="listbox">
@@ -19,11 +20,11 @@
             // Decode the JSON data
             $data = json_decode($jsonData, true);
 
-            // Get the last 5 projects
-            $lastProjects = array_slice($data['projects'], -5);
+            // Get the last 5 promos from the promo_carousel array
+            $lastPromos = array_slice($data['promo_carousel'], -5);
 
-            // Loop through the projects and generate HTML
-            foreach ($lastProjects as $index => $project) {
+            // Loop through the promos and generate HTML
+            foreach ($lastPromos as $index => $promo) {
                 $activeClass = ($index === 0) ? 'active' : ''; // Add 'active' class for the first iteration
             
                 ?>
@@ -32,12 +33,17 @@
                         
                         <div class="text">
                             <h2>
-                                <?= $project['title'] ?>
+                                <?= $promo['title'] ?>
                             </h2>
-                            <a href="project.php?id=<?= $project['id'] ?>">Pogledaj detalje projekta</a>
+                            <?php if (!empty($promo['description'])): ?>
+                                <div class="description"><?= $promo['description'] ?></div>
+                            <?php endif; ?>
+                            <?php if (!empty($promo['a_tag_text']) && !empty($promo['a_tag_href'])): ?>
+                                <a href="<?= $promo['a_tag_href'] ?>"><?= $promo['a_tag_text'] ?></a>
+                            <?php endif; ?>
                         </div>
                         <div class="img-container">
-                            <img src="./assets/ProjectsImages/<?= $project['thumbnail'] ?>" alt="Slide" />
+                            <img src="./assets/PromoImages/<?= $promo['image'] ?>" alt="Slide" />
                         </div>
                     </div>
                 </div>
@@ -45,7 +51,6 @@
             }
             ?>
         </div>
-    </div>
     </div>
 
     <script>

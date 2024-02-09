@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <div>
-        <h2>Admin Panel</h2>
-        <div>
-            <h3>Blog</h3>
-            <p>Click to manage blog posts.</p>
-            <a href="blogAdmin.php">Go to Blog Admin</a>
-        </div>
-        <div>
-            <h3>Projects</h3>
-            <p>Click to manage projects.</p>
-            <a href="projectsAdmin.php">Go to Projects Admin</a>
-        </div>
-        <div>
-            <h3>Promo</h3>
-            <p>Click to manage projects.</p>
-            <a href="promo.php">Go to Promo Admin</a>
-        </div>
+   <div class="admin-panel">
+   <h2>Admin Panel</h2>
+    <div class="admin-main">
+        
+            
+            <a href="blogAdmin.php">Objave</a>
+        
+       
+           
+            <a href="projectsAdmin.php">Projekti</a>
+        
+       
+            <a href="promoAdmin.php">Promo</a>
+       
     </div>
+   </div>
 </body>
 </html>
