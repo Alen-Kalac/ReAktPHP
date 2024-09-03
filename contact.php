@@ -21,7 +21,7 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="contact-details">
-            <h1>Kontakt informacije</h1>
+                <h1>Kontakt informacije</h1>
                 <div class="option">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="phone">
@@ -49,6 +49,7 @@
                         </svg>
                     </div>
                     <div class="text">
+                        <p>savetovaliste.reakt@gmail.com</p>
                         <p>re_akt@hotmail.com</p>
                     </div>
                 </div>

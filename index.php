@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="image/png" sizes="16x16" rel="icon" href="./assets/favicon.png">
-    <title>Početna - ReAkt</title>
+    <meta name="description" content="ReAkt je udruženje psihologa koje pruža besplatne psihološke usluge u Novom Pazaru. Naš cilj je pružiti podršku zajednici kroz savetovanje , bez obzira na finansijske mogućnosti.">
+    <meta name="keywords" content="udruzenje reakt, reakt novi pazar, terapeuti, besplatne usluge, Novi Pazar">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Udruzenje ReAkt Novi Pazar">
+    <meta property="og:title" content="Udruzenje ReAkt">
+    <meta property="og:description" content="ReAkt je udruženje psihologa koje pruža besplatne psihološke usluge u Novom Pazaru. Naš cilj je pružiti podršku zajednici kroz savetovanje , bez obzira na finansijske mogućnosti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reaktnp.com">
+    <meta property="og:locale" content="sr_RS">
+    <title>Udruzenje ReAkt</title>
+    <link rel="icon" href="./assets/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="./styles/style.css?v=1.2">
 </head>
 
@@ -109,16 +118,18 @@
         <div class="content">
             <div class="options">
                 <p>
-                    U okviru rada udruženja ReAkt dostupne su usluge usmerene na očuvanje mentalnog zdravlja dece,
+                    U okviru rada udruženja ReAkt dostupne su  pristupačne usluge usmerene na očuvanje mentalnog zdravlja dece,
                     mladih i odraslih kroz pružanje sledećih usluga :
 
-                    <span>Psihodijagnostika</span>
-                    <span>Individualne i grupne savetodavno-terapijske usluge za decu, mlade i odrasle</span>
+                    <span>Psihološka procena</span>
+                    <span>Individualno psihološko savetovanje</span>
+                    <span>Grupno psihološko savetovanje</span>
                     <span>Psihoedukacija</span>
                     <span>Karijerno savetovanje</span>
+
                 </p>
 
-                <a href="therapy.php">Zakazi savetovanje</a>
+                <a href="therapy.php">Više o uslugama</a>
             </div>
             <img src="./assets/Therapy.svg" alt="">
         </div>

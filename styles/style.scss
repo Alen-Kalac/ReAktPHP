@@ -473,7 +473,7 @@ nav {
             h2 {
                 padding: 2% 0;
                 text-align: center;
-                color: var(--black);
+                color: var(--white);
                 font-size: 2.3rem;
                 margin: 0;
 
@@ -769,7 +769,7 @@ nav {
 
         padding: 2% 0;
         text-align: center;
-        color: var(--black);
+        color: var(--white);
         font-size: 2.3rem;
         margin: 0;
 
@@ -1205,6 +1205,9 @@ nav {
                 border-radius: 1vh;
                 padding: 3%;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+
 
                 img {
                     width: 100%;
@@ -1213,12 +1216,17 @@ nav {
                 }
 
                 h2 {
-                    min-height: 5vh;
-                    font-size: 1.2rem;
-                    margin-bottom: 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height:4rem ;
+                   font-size: 1.2rem;
                 }
 
                 p {
+                    padding-top: 1.5vh;
+                    height: 25vh;
+                    flex: 1;
                     font-size: 0.9rem;
                     text-align: justify;
                 }

@@ -34,7 +34,8 @@
             </a>
         </div>
         <p class="short-desc">
-           Ovaj materijal je objavljen uz finansijsku pomoc Evropske unije. Za njegovi sadržinu odgovorno je isključivo udruženje ReAkt i ona nipošto ne odražava stavove Evropske Unije
+            Ovaj materijal je objavljen uz finansijsku pomoc Evropske unije. Za njegovi sadržinu odgovorno je isključivo
+            udruženje ReAkt i ona nipošto ne odražava stavove Evropske Unije
         </p>
     </div>
 </body>

@@ -49,7 +49,7 @@
                     <h2>Psihoedukacija</h2>
                     <p>Psihoedukacija je proces  informisanja o mentalnom zdravlju i  psihološkim
                         konceptima. Ova usluga obuhvata  aktivnosti kao što su radionice, predavanja ili
-                        edukativnih materijala. Cilj je osnaživanje pojedinca da bolje razume i prevaziđe  izazove u različitim životnim ulogama.
+                        edukativnih materijala.
                     </p>
                 </div>
                 <!-- Card 5 -->
@@ -63,7 +63,7 @@
             </div>
         </div>
         <a href="contact.php" class="therapy-cta">
-            Zakažite svoj termin
+           ZAKAŽI SVOJ TERMIN
 </a>
     </div>
     <?php include 'footer.php' ?>
